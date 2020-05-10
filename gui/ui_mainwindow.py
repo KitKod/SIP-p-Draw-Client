@@ -218,110 +218,110 @@ class Ui_MainWindow(object):
 
         self.formLayout_2.setWidget(0, QFormLayout.LabelRole, self.label_11)
 
-        self.lineEdit_11 = QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
+        self.spinBox = QSpinBox(self.scrollAreaWidgetContents)
+        self.spinBox.setObjectName(u"spinBox")
 
-        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.lineEdit_11)
+        self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.spinBox)
 
         self.label_12 = QLabel(self.scrollAreaWidgetContents)
         self.label_12.setObjectName(u"label_12")
 
         self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.label_12)
 
-        self.lineEdit_12 = QLineEdit(self.scrollAreaWidgetContents)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
+        self.comboBox = QComboBox(self.scrollAreaWidgetContents)
+        self.comboBox.setObjectName(u"comboBox")
 
-        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.lineEdit_12)
-
-        self.stab1Label = QLabel(self.scrollAreaWidgetContents)
-        self.stab1Label.setObjectName(u"stab1Label")
-
-        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.stab1Label)
-
-        self.stab1LineEdit = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit.setObjectName(u"stab1LineEdit")
-
-        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.stab1LineEdit)
-
-        self.stab1Label_2 = QLabel(self.scrollAreaWidgetContents)
-        self.stab1Label_2.setObjectName(u"stab1Label_2")
-
-        self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.stab1Label_2)
-
-        self.stab1LineEdit_2 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_2.setObjectName(u"stab1LineEdit_2")
-
-        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.stab1LineEdit_2)
-
-        self.stab1LineEdit_3 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_3.setObjectName(u"stab1LineEdit_3")
-
-        self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.stab1LineEdit_3)
-
-        self.stab1LineEdit_4 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_4.setObjectName(u"stab1LineEdit_4")
-
-        self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.stab1LineEdit_4)
-
-        self.stab1LineEdit_5 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_5.setObjectName(u"stab1LineEdit_5")
-
-        self.formLayout_2.setWidget(6, QFormLayout.FieldRole, self.stab1LineEdit_5)
-
-        self.stab1LineEdit_6 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_6.setObjectName(u"stab1LineEdit_6")
-
-        self.formLayout_2.setWidget(7, QFormLayout.FieldRole, self.stab1LineEdit_6)
-
-        self.stab1LineEdit_7 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_7.setObjectName(u"stab1LineEdit_7")
-
-        self.formLayout_2.setWidget(8, QFormLayout.FieldRole, self.stab1LineEdit_7)
-
-        self.stab1LineEdit_8 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_8.setObjectName(u"stab1LineEdit_8")
-
-        self.formLayout_2.setWidget(9, QFormLayout.FieldRole, self.stab1LineEdit_8)
-
-        self.stab1LineEdit_9 = QLineEdit(self.scrollAreaWidgetContents)
-        self.stab1LineEdit_9.setObjectName(u"stab1LineEdit_9")
-
-        self.formLayout_2.setWidget(10, QFormLayout.FieldRole, self.stab1LineEdit_9)
-
-        self.stab1Label_3 = QLabel(self.scrollAreaWidgetContents)
-        self.stab1Label_3.setObjectName(u"stab1Label_3")
-
-        self.formLayout_2.setWidget(4, QFormLayout.LabelRole, self.stab1Label_3)
-
-        self.stab1Label_4 = QLabel(self.scrollAreaWidgetContents)
-        self.stab1Label_4.setObjectName(u"stab1Label_4")
-
-        self.formLayout_2.setWidget(5, QFormLayout.LabelRole, self.stab1Label_4)
+        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.comboBox)
 
         self.stab1Label_5 = QLabel(self.scrollAreaWidgetContents)
         self.stab1Label_5.setObjectName(u"stab1Label_5")
 
-        self.formLayout_2.setWidget(6, QFormLayout.LabelRole, self.stab1Label_5)
+        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.stab1Label_5)
+
+        self.spinBox_2 = QSpinBox(self.scrollAreaWidgetContents)
+        self.spinBox_2.setObjectName(u"spinBox_2")
+
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.spinBox_2)
 
         self.stab1Label_6 = QLabel(self.scrollAreaWidgetContents)
         self.stab1Label_6.setObjectName(u"stab1Label_6")
 
-        self.formLayout_2.setWidget(7, QFormLayout.LabelRole, self.stab1Label_6)
+        self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.stab1Label_6)
+
+        self.spinBox_3 = QSpinBox(self.scrollAreaWidgetContents)
+        self.spinBox_3.setObjectName(u"spinBox_3")
+
+        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.spinBox_3)
 
         self.stab1Label_7 = QLabel(self.scrollAreaWidgetContents)
         self.stab1Label_7.setObjectName(u"stab1Label_7")
 
-        self.formLayout_2.setWidget(8, QFormLayout.LabelRole, self.stab1Label_7)
+        self.formLayout_2.setWidget(4, QFormLayout.LabelRole, self.stab1Label_7)
 
-        self.stab1Label_8 = QLabel(self.scrollAreaWidgetContents)
-        self.stab1Label_8.setObjectName(u"stab1Label_8")
+        self.stab1LineEdit_7 = QLineEdit(self.scrollAreaWidgetContents)
+        self.stab1LineEdit_7.setObjectName(u"stab1LineEdit_7")
 
-        self.formLayout_2.setWidget(9, QFormLayout.LabelRole, self.stab1Label_8)
+        self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.stab1LineEdit_7)
 
         self.stab1Label_9 = QLabel(self.scrollAreaWidgetContents)
         self.stab1Label_9.setObjectName(u"stab1Label_9")
 
-        self.formLayout_2.setWidget(10, QFormLayout.LabelRole, self.stab1Label_9)
+        self.formLayout_2.setWidget(5, QFormLayout.LabelRole, self.stab1Label_9)
+
+        self.stab1LineEdit_9 = QLineEdit(self.scrollAreaWidgetContents)
+        self.stab1LineEdit_9.setObjectName(u"stab1LineEdit_9")
+
+        self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.stab1LineEdit_9)
+
+        self.stab1Label = QLabel(self.scrollAreaWidgetContents)
+        self.stab1Label.setObjectName(u"stab1Label")
+
+        self.formLayout_2.setWidget(6, QFormLayout.LabelRole, self.stab1Label)
+
+        self.checkBox = QCheckBox(self.scrollAreaWidgetContents)
+        self.checkBox.setObjectName(u"checkBox")
+
+        self.formLayout_2.setWidget(6, QFormLayout.FieldRole, self.checkBox)
+
+        self.stab1Label_2 = QLabel(self.scrollAreaWidgetContents)
+        self.stab1Label_2.setObjectName(u"stab1Label_2")
+
+        self.formLayout_2.setWidget(7, QFormLayout.LabelRole, self.stab1Label_2)
+
+        self.checkBox_2 = QCheckBox(self.scrollAreaWidgetContents)
+        self.checkBox_2.setObjectName(u"checkBox_2")
+
+        self.formLayout_2.setWidget(7, QFormLayout.FieldRole, self.checkBox_2)
+
+        self.stab1Label_3 = QLabel(self.scrollAreaWidgetContents)
+        self.stab1Label_3.setObjectName(u"stab1Label_3")
+
+        self.formLayout_2.setWidget(8, QFormLayout.LabelRole, self.stab1Label_3)
+
+        self.checkBox_3 = QCheckBox(self.scrollAreaWidgetContents)
+        self.checkBox_3.setObjectName(u"checkBox_3")
+
+        self.formLayout_2.setWidget(8, QFormLayout.FieldRole, self.checkBox_3)
+
+        self.stab1Label_4 = QLabel(self.scrollAreaWidgetContents)
+        self.stab1Label_4.setObjectName(u"stab1Label_4")
+
+        self.formLayout_2.setWidget(9, QFormLayout.LabelRole, self.stab1Label_4)
+
+        self.checkBox_4 = QCheckBox(self.scrollAreaWidgetContents)
+        self.checkBox_4.setObjectName(u"checkBox_4")
+
+        self.formLayout_2.setWidget(9, QFormLayout.FieldRole, self.checkBox_4)
+
+        self.stab1Label_8 = QLabel(self.scrollAreaWidgetContents)
+        self.stab1Label_8.setObjectName(u"stab1Label_8")
+
+        self.formLayout_2.setWidget(10, QFormLayout.LabelRole, self.stab1Label_8)
+
+        self.checkBox_5 = QCheckBox(self.scrollAreaWidgetContents)
+        self.checkBox_5.setObjectName(u"checkBox_5")
+
+        self.formLayout_2.setWidget(10, QFormLayout.FieldRole, self.checkBox_5)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -540,7 +540,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget_2.setCurrentIndex(0)
         self.toolBox.setCurrentIndex(1)
-        self.stackedw_spec_attrs.setCurrentIndex(3)
+        self.stackedw_spec_attrs.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(1)
 
 
@@ -567,17 +567,22 @@ class Ui_MainWindow(object):
         self.stab1Label_21.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
         self.stab1Label_22.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_common_attr), QCoreApplication.translate("MainWindow", u"Common attributes", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Recv", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.stab1Label.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_2.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_3.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_4.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_5.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_6.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_7.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_8.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
-        self.stab1Label_9.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"response", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"request", None))
+        self.stab1Label_5.setText(QCoreApplication.translate("MainWindow", u"lost", None))
+        self.stab1Label_6.setText(QCoreApplication.translate("MainWindow", u"timeout", None))
+        self.stab1Label_7.setText(QCoreApplication.translate("MainWindow", u"ontimeout", None))
+        self.stab1Label_9.setText(QCoreApplication.translate("MainWindow", u"response_txn", None))
+        self.stab1Label.setText(QCoreApplication.translate("MainWindow", u"optional", None))
+        self.checkBox.setText("")
+        self.stab1Label_2.setText(QCoreApplication.translate("MainWindow", u"ignoresdp", None))
+        self.checkBox_2.setText("")
+        self.stab1Label_3.setText(QCoreApplication.translate("MainWindow", u"rrs", None))
+        self.checkBox_3.setText("")
+        self.stab1Label_4.setText(QCoreApplication.translate("MainWindow", u"auth", None))
+        self.checkBox_4.setText("")
+        self.stab1Label_8.setText(QCoreApplication.translate("MainWindow", u"regexp_match", None))
+        self.checkBox_5.setText("")
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Send", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.stab1Label_10.setText(QCoreApplication.translate("MainWindow", u"stab1", None))
