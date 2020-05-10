@@ -11,10 +11,11 @@ class BaseCommand:
     content = None
 
     def __init__(self):
-        self.attributes_map = {
-            'start_rtd': ,
-            '': ,
-            '': ,
-            '': ,
-            '': ,
-        }
+        # self.attributes_map = {
+        #     'start_rtd': ,
+        #     '': ,
+        #     '': ,
+        #     '': ,
+        #     '': ,
+        # }
+        pass

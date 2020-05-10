@@ -2,18 +2,16 @@ import sys
 from PySide2.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QVBoxLayout, QPushButton
 from gui.ui_mainwindow import Ui_MainWindow
 
-
 from PySide2.QtCore import Qt, QAbstractTableModel, QModelIndex, Slot
 from PySide2.QtGui import QColor, QBrush
 
-class MyItem(QTableWidgetItem):
 
+class MyItem(QTableWidgetItem):
     myre = None
 
     def __init__(self, d):
         self.myre = d
         super().__init__(str(d))
-
 
 
 class MainWindow(QMainWindow):
@@ -42,33 +40,34 @@ if __name__ == "__main__":
 
     def cell_was_clicked(row, column):
         print("Row %d and Column %d was clicked" % (row, column))
-        # item = window.ui.table_constructor.item(row, column)
         item = window.ui.table_constructor.currentItem()
         print(type(item))
         if item is None:
             return
-        window.ui.label_data.setText(item.text())
 
     @Slot()
-    def butclic(*args):
-        print(args)
+    def addItemToTable(button_name):
         pos = window.ui.table_constructor.rowCount()
-        print(pos)
         window.ui.table_constructor.insertRow(pos)
 
-        item = MyItem({'tol': 'r', 'mol': 2})
-        item.setBackgroundColor(QColor('red'))
-        if 'pushButton' in args:
-            window.ui.table_constructor.setItem(pos, 1, item)
-        else:
+        if 'pushButton_add_recv' in button_name:
+            item = MyItem({'200': 'OK'})
+            item.setBackgroundColor(QColor('red'))
             window.ui.table_constructor.setItem(pos, 0, item)
+        elif 'pushButton_add_send' in button_name:
+            item = MyItem({'INVITE': ''})
+            item.setBackgroundColor(QColor('green'))
+            window.ui.table_constructor.setItem(pos, 2, item)
+        else:
+            item = MyItem({'nop': ''})
+            item.setBackgroundColor(QColor('white'))
+            window.ui.table_constructor.setItem(pos, 1, item)
 
     window.ui.table_constructor.cellClicked.connect(cell_was_clicked)
-    window.ui.pushButton.clicked.connect(butclic)
-    window.ui.button_1.clicked.connect(lambda: butclic(window.ui.pushButton.objectName()))
-    ly = QVBoxLayout()
-    ly.addWidget(QPushButton('clikme'))
 
+    window.ui.pushButton_add_recv.clicked.connect(lambda: addItemToTable(window.ui.pushButton_add_recv.objectName()))
+    window.ui.pushButton_add_send.clicked.connect(lambda: addItemToTable(window.ui.pushButton_add_send.objectName()))
+    window.ui.pushButton_add_action.clicked.connect(lambda: addItemToTable(window.ui.pushButton_add_action.objectName()))
 
     window.show()
 

@@ -29,14 +29,14 @@
       <widget class="QWidget" name="page_3">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="pushButton_change">
           <property name="text">
            <string>Change</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="pushButton_delete">
           <property name="text">
            <string>Delete</string>
           </property>
@@ -50,7 +50,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -101,7 +101,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label_18">
               <property name="text">
-               <string>Common Attrr</string>
+               <string>start_rtd</string>
               </property>
              </widget>
             </item>
@@ -111,100 +111,98 @@
             <item row="1" column="0">
              <widget class="QLabel" name="label_19">
               <property name="text">
-               <string>TextLabel</string>
+               <string>rtd</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_18"/>
+             <widget class="QSpinBox" name="spinBox_8"/>
             </item>
             <item row="2" column="0">
-             <widget class="QLabel" name="stab1Label_14">
+             <widget class="QLabel" name="stab1Label_18">
               <property name="text">
-               <string>stab1</string>
+               <string>chance</string>
               </property>
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_14"/>
+             <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
             </item>
             <item row="3" column="0">
-             <widget class="QLabel" name="stab1Label_15">
+             <widget class="QLabel" name="stab1Label_16">
               <property name="text">
-               <string>stab1</string>
+               <string>next</string>
               </property>
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_15"/>
-            </item>
-            <item row="4" column="1">
              <widget class="QLineEdit" name="stab1LineEdit_16"/>
             </item>
-            <item row="5" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_17"/>
-            </item>
-            <item row="6" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_18"/>
-            </item>
-            <item row="7" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_19"/>
-            </item>
-            <item row="8" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_20"/>
-            </item>
-            <item row="9" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_21"/>
-            </item>
-            <item row="10" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_22"/>
-            </item>
             <item row="4" column="0">
-             <widget class="QLabel" name="stab1Label_16">
-              <property name="text">
-               <string>stab1</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0">
              <widget class="QLabel" name="stab1Label_17">
               <property name="text">
-               <string>stab1</string>
+               <string>test</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="stab1Label_18">
-              <property name="text">
-               <string>stab1</string>
-              </property>
-             </widget>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="stab1LineEdit_17"/>
             </item>
-            <item row="7" column="0">
+            <item row="5" column="0">
              <widget class="QLabel" name="stab1Label_19">
               <property name="text">
-               <string>stab1</string>
+               <string>condexec</string>
               </property>
              </widget>
             </item>
-            <item row="8" column="0">
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="stab1LineEdit_19"/>
+            </item>
+            <item row="6" column="0">
              <widget class="QLabel" name="stab1Label_20">
               <property name="text">
-               <string>stab1</string>
+               <string>condexec_inverse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="stab1LineEdit_20"/>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="stab1Label_21">
+              <property name="text">
+               <string>counter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="stab1LineEdit_21"/>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="stab1Label_14">
+              <property name="text">
+               <string>repeat_rtd</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QCheckBox" name="checkBox_8">
+              <property name="text">
+               <string/>
               </property>
              </widget>
             </item>
             <item row="9" column="0">
-             <widget class="QLabel" name="stab1Label_21">
+             <widget class="QLabel" name="stab1Label_15">
               <property name="text">
-               <string>stab1</string>
+               <string>crlf</string>
               </property>
              </widget>
             </item>
-            <item row="10" column="0">
-             <widget class="QLabel" name="stab1Label_22">
+            <item row="9" column="1">
+             <widget class="QCheckBox" name="checkBox_7">
               <property name="text">
-               <string>stab1</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -262,130 +260,206 @@
                </property>
                <layout class="QFormLayout" name="formLayout_2">
                 <item row="0" column="0">
-                 <widget class="QLabel" name="label_11">
+                 <widget class="QLabel" name="label_response">
                   <property name="text">
                    <string>response</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="spinBox"/>
+                 <widget class="QSpinBox" name="attr_response_spinBox"/>
                 </item>
                 <item row="1" column="0">
-                 <widget class="QLabel" name="label_12">
+                 <widget class="QLabel" name="label_request">
                   <property name="text">
                    <string>request</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QComboBox" name="comboBox"/>
+                 <widget class="QComboBox" name="attr_request_comboBox">
+                  <item>
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>INVITE</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ACK</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>BYE</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>CANCEL</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>REGISTER</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>OPTIONS</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>PRACK</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>SUBSCRIBE</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>NOTIFY</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>PUBLISH</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>INFO</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>REFER</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>MESSAGE</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>UPDATE</string>
+                   </property>
+                  </item>
+                 </widget>
                 </item>
                 <item row="2" column="0">
-                 <widget class="QLabel" name="stab1Label_5">
+                 <widget class="QLabel" name="label_lost">
                   <property name="text">
                    <string>lost</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QSpinBox" name="spinBox_2"/>
+                 <widget class="QSpinBox" name="attr_lost_spinBox"/>
                 </item>
                 <item row="3" column="0">
-                 <widget class="QLabel" name="stab1Label_6">
+                 <widget class="QLabel" name="label_timeout">
                   <property name="text">
                    <string>timeout</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QSpinBox" name="spinBox_3"/>
+                 <widget class="QSpinBox" name="attr_timeout_spinBox"/>
                 </item>
                 <item row="4" column="0">
-                 <widget class="QLabel" name="stab1Label_7">
+                 <widget class="QLabel" name="label_ontimeout">
                   <property name="text">
                    <string>ontimeout</string>
                   </property>
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="stab1LineEdit_7"/>
+                 <widget class="QLineEdit" name="attr_ontimeout_LineEdit"/>
                 </item>
                 <item row="5" column="0">
-                 <widget class="QLabel" name="stab1Label_9">
+                 <widget class="QLabel" name="label_response_txn">
                   <property name="text">
                    <string>response_txn</string>
                   </property>
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QLineEdit" name="stab1LineEdit_9"/>
+                 <widget class="QLineEdit" name="attr_response_txn_LineEdit"/>
                 </item>
                 <item row="6" column="0">
-                 <widget class="QLabel" name="stab1Label">
+                 <widget class="QLabel" name="label_optional">
                   <property name="text">
                    <string>optional</string>
                   </property>
                  </widget>
                 </item>
                 <item row="6" column="1">
-                 <widget class="QCheckBox" name="checkBox">
+                 <widget class="QCheckBox" name="attr_optional_checkBox">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="7" column="0">
-                 <widget class="QLabel" name="stab1Label_2">
+                 <widget class="QLabel" name="label_ignoresdp">
                   <property name="text">
                    <string>ignoresdp</string>
                   </property>
                  </widget>
                 </item>
                 <item row="7" column="1">
-                 <widget class="QCheckBox" name="checkBox_2">
+                 <widget class="QCheckBox" name="attr_ignoresdp_checkBox">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="8" column="0">
-                 <widget class="QLabel" name="stab1Label_3">
+                 <widget class="QLabel" name="label_rrs">
                   <property name="text">
                    <string>rrs</string>
                   </property>
                  </widget>
                 </item>
                 <item row="8" column="1">
-                 <widget class="QCheckBox" name="checkBox_3">
+                 <widget class="QCheckBox" name="attr_rrs_checkBox">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="9" column="0">
-                 <widget class="QLabel" name="stab1Label_4">
+                 <widget class="QLabel" name="label_auth">
                   <property name="text">
                    <string>auth</string>
                   </property>
                  </widget>
                 </item>
                 <item row="9" column="1">
-                 <widget class="QCheckBox" name="checkBox_4">
+                 <widget class="QCheckBox" name="attr_auth_checkBox">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="10" column="0">
-                 <widget class="QLabel" name="stab1Label_8">
+                 <widget class="QLabel" name="label_regexp_match">
                   <property name="text">
                    <string>regexp_match</string>
                   </property>
                  </widget>
                 </item>
                 <item row="10" column="1">
-                 <widget class="QCheckBox" name="checkBox_5">
+                 <widget class="QCheckBox" name="attr_regexp_match_checkBox">
                   <property name="text">
                    <string/>
                   </property>
@@ -427,44 +501,44 @@
                </property>
                <layout class="QFormLayout" name="formLayout_3">
                 <item row="0" column="0">
-                 <widget class="QLabel" name="label_13">
+                 <widget class="QLabel" name="label_retrans">
                   <property name="text">
-                   <string>Send</string>
+                   <string>retrans</string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="1">
-                 <widget class="QLineEdit" name="lineEdit_13"/>
-                </item>
                 <item row="1" column="0">
-                 <widget class="QLabel" name="label_14">
+                 <widget class="QLabel" name="label_lost_send">
                   <property name="text">
-                   <string>TextLabel</string>
+                   <string>lost</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLineEdit" name="lineEdit_14"/>
+                 <widget class="QSpinBox" name="attr_lost_send_spinBox"/>
                 </item>
                 <item row="2" column="0">
-                 <widget class="QLabel" name="stab1Label_10">
+                 <widget class="QLabel" name="label_start_txn">
                   <property name="text">
-                   <string>stab1</string>
+                   <string>start_txn</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="stab1LineEdit_10"/>
+                 <widget class="QLineEdit" name="attr_start_txn_LineEdit"/>
                 </item>
                 <item row="3" column="0">
-                 <widget class="QLabel" name="stab1Label_11">
+                 <widget class="QLabel" name="label_ack_txn">
                   <property name="text">
-                   <string>stab1</string>
+                   <string>ack_txn</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="stab1LineEdit_11"/>
+                 <widget class="QLineEdit" name="attr_ack_txn_LineEdit"/>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QSpinBox" name="attr_retrans_spinBox"/>
                 </item>
                </layout>
               </widget>
@@ -502,44 +576,99 @@
                </property>
                <layout class="QFormLayout" name="formLayout_4">
                 <item row="0" column="0">
-                 <widget class="QLabel" name="label_15">
+                 <widget class="QLabel" name="label_milliseconds">
                   <property name="text">
-                   <string>Pause</string>
+                   <string>milliseconds</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_variable">
+                  <property name="text">
+                   <string>variable</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_distribution">
+                  <property name="text">
+                   <string>distribution</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="lineEdit_15"/>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_16">
-                  <property name="text">
-                   <string>TextLabel</string>
-                  </property>
-                 </widget>
+                 <widget class="QSpinBox" name="attr_milliseconds_spinBox"/>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLineEdit" name="lineEdit_16"/>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="stab1Label_12">
-                  <property name="text">
-                   <string>stab1</string>
-                  </property>
-                 </widget>
+                 <widget class="QSpinBox" name="attr_variable_spinBox"/>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="stab1LineEdit_12"/>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="stab1Label_13">
-                  <property name="text">
-                   <string>stab1</string>
-                  </property>
+                 <widget class="QComboBox" name="attr_distribution_comboBox">
+                  <item>
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>fixed</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>uniform</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>normal</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>lognormal</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>exponential</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>weibull</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>pareto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>gamma</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>negbin</string>
+                   </property>
+                  </item>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="stab1LineEdit_13"/>
+                 <widget class="QCheckBox" name="attr_sanity_check_checkBox">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="labal_sanity_check">
+                  <property name="text">
+                   <string>sanity_check</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -571,13 +700,13 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>416</height>
+                 <width>299</width>
+                 <height>35</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_8">
                 <item row="0" column="0">
-                 <widget class="QLabel" name="label_17">
+                 <widget class="QLabel" name="label_missing_attr">
                   <property name="text">
                    <string>This command has not specific attributes.</string>
                   </property>
@@ -597,28 +726,74 @@
        </layout>
       </widget>
       <widget class="QWidget" name="page_content">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>388</width>
+         <height>436</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Content</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QStackedWidget" name="stackedWidget">
+         <widget class="QStackedWidget" name="stackedw_content">
           <property name="currentIndex">
            <number>1</number>
           </property>
-          <widget class="QWidget" name="page">
-           <widget class="QLineEdit" name="lineEdit_22">
-            <property name="geometry">
-             <rect>
-              <x>100</x>
-              <y>130</y>
-              <width>113</width>
-              <height>25</height>
-             </rect>
+          <widget class="QWidget" name="page_stackw_contentof_send">
+           <layout class="QGridLayout" name="gridLayout_10">
+            <property name="leftMargin">
+             <number>0</number>
             </property>
-           </widget>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QTextEdit" name="texte_cdata">
+              <property name="documentTitle">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>&lt;![CDATA[. . .]]&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="page_2"/>
+          <widget class="QWidget" name="page_stackw_contentof_nop">
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>action</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="comboBox_3">
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>exec</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -631,21 +806,21 @@
     <item row="1" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="button_1">
+       <widget class="QPushButton" name="pushButton_add_recv">
         <property name="text">
          <string>+</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="pushButton_add_action">
         <property name="text">
          <string>+</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="pushButton_add_send">
         <property name="text">
          <string>+</string>
         </property>
@@ -680,10 +855,10 @@
   </action>
  </widget>
  <tabstops>
-  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_add_send</tabstop>
   <tabstop>table_constructor</tabstop>
-  <tabstop>button_1</tabstop>
-  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_add_recv</tabstop>
+  <tabstop>pushButton_add_action</tabstop>
  </tabstops>
  <resources/>
  <connections/>
