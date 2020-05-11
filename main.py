@@ -5,6 +5,8 @@ from gui.ui_mainwindow import Ui_MainWindow
 from PySide2.QtCore import Qt, QAbstractTableModel, QModelIndex, Slot
 from PySide2.QtGui import QColor, QBrush
 
+from SippDrawConf import getMainWindow, getUI
+
 
 class MyItem(QTableWidgetItem):
     myre = None
@@ -21,55 +23,57 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
+def myInvestigationOfUIWidgets():
+    ui = getUI()
+    ui.table_constructor.setColumnCount(3)
+    ui.table_constructor.setHorizontalHeaderLabels(('recv', 'action', 'send'))
 
-    window = MainWindow()
-
-    window.ui.table_constructor.setColumnCount(3)
-    window.ui.table_constructor.setHorizontalHeaderLabels(('recv', 'action', 'send'))
-
-    window.ui.table_constructor.insertRow(window.ui.table_constructor.rowCount())
+    ui.table_constructor.insertRow(ui.table_constructor.rowCount())
 
     i = MyItem({'a': 1, 'b': 2})
     i.setBackgroundColor(QColor('red'))
-    window.ui.table_constructor.setItem(0, 0, i)
-    window.ui.table_constructor.setItem(0, 1, MyItem({'v': 10, 'f': 1}))
-    window.ui.table_constructor.setItem(0, 2, MyItem({'a': 1, 'b': 2}))
-
+    ui.table_constructor.setItem(0, 0, i)
+    ui.table_constructor.setItem(0, 1, MyItem({'v': 10, 'f': 1}))
+    ui.table_constructor.setItem(0, 2, MyItem({'a': 1, 'b': 2}))
 
     def cell_was_clicked(row, column):
         print("Row %d and Column %d was clicked" % (row, column))
-        item = window.ui.table_constructor.currentItem()
+        item = ui.table_constructor.currentItem()
         print(type(item))
         if item is None:
             return
 
     @Slot()
     def addItemToTable(button_name):
-        pos = window.ui.table_constructor.rowCount()
-        window.ui.table_constructor.insertRow(pos)
+        pos = ui.table_constructor.rowCount()
+        ui.table_constructor.insertRow(pos)
 
         if 'pushButton_add_recv' in button_name:
             item = MyItem({'200': 'OK'})
             item.setBackgroundColor(QColor('red'))
-            window.ui.table_constructor.setItem(pos, 0, item)
+            ui.table_constructor.setItem(pos, 0, item)
         elif 'pushButton_add_send' in button_name:
             item = MyItem({'INVITE': ''})
             item.setBackgroundColor(QColor('green'))
-            window.ui.table_constructor.setItem(pos, 2, item)
+            ui.table_constructor.setItem(pos, 2, item)
         else:
             item = MyItem({'nop': ''})
             item.setBackgroundColor(QColor('white'))
-            window.ui.table_constructor.setItem(pos, 1, item)
+            ui.table_constructor.setItem(pos, 1, item)
 
-    window.ui.table_constructor.cellClicked.connect(cell_was_clicked)
+    ui.table_constructor.cellClicked.connect(cell_was_clicked)
 
-    window.ui.pushButton_add_recv.clicked.connect(lambda: addItemToTable(window.ui.pushButton_add_recv.objectName()))
-    window.ui.pushButton_add_send.clicked.connect(lambda: addItemToTable(window.ui.pushButton_add_send.objectName()))
-    window.ui.pushButton_add_action.clicked.connect(lambda: addItemToTable(window.ui.pushButton_add_action.objectName()))
+    ui.pushButton_add_recv.clicked.connect(lambda: addItemToTable(ui.pushButton_add_recv.objectName()))
+    ui.pushButton_add_send.clicked.connect(lambda: addItemToTable(ui.pushButton_add_send.objectName()))
+    ui.pushButton_add_action.clicked.connect(
+        lambda: addItemToTable(ui.pushButton_add_action.objectName()))
 
-    window.show()
 
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    myInvestigationOfUIWidgets()
+
+    getMainWindow().show()
     sys.exit(app.exec_())
 
