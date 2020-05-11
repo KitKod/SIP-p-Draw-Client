@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -74,7 +74,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit_17"/>
+             <widget class="QLineEdit" name="attr_com_start_rtd_LineEdit"/>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_19">
@@ -84,7 +84,17 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QSpinBox" name="spinBox_8"/>
+             <widget class="QSpinBox" name="attr_com_rtd_spinBox">
+              <property name="minimum">
+               <number>-1</number>
+              </property>
+              <property name="value">
+               <number>-1</number>
+              </property>
+              <property name="displayIntegerBase">
+               <number>10</number>
+              </property>
+             </widget>
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="stab1Label_18">
@@ -94,7 +104,7 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+             <widget class="QDoubleSpinBox" name="attr_com_chance_doubleSpinBox"/>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="stab1Label_16">
@@ -104,7 +114,7 @@
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_16"/>
+             <widget class="QLineEdit" name="attr_com_next_LineEdit"/>
             </item>
             <item row="4" column="0">
              <widget class="QLabel" name="stab1Label_17">
@@ -114,7 +124,7 @@
              </widget>
             </item>
             <item row="4" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_17"/>
+             <widget class="QLineEdit" name="attr_com_test_LineEdit"/>
             </item>
             <item row="5" column="0">
              <widget class="QLabel" name="stab1Label_19">
@@ -124,27 +134,7 @@
              </widget>
             </item>
             <item row="5" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_19"/>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="stab1Label_20">
-              <property name="text">
-               <string>condexec_inverse</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_20"/>
-            </item>
-            <item row="7" column="0">
-             <widget class="QLabel" name="stab1Label_21">
-              <property name="text">
-               <string>counter</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="1">
-             <widget class="QLineEdit" name="stab1LineEdit_21"/>
+             <widget class="QLineEdit" name="attr_com_condexec_LineEdit"/>
             </item>
             <item row="8" column="0">
              <widget class="QLabel" name="stab1Label_14">
@@ -154,7 +144,7 @@
              </widget>
             </item>
             <item row="8" column="1">
-             <widget class="QCheckBox" name="checkBox_8">
+             <widget class="QCheckBox" name="attr_com_repeat_rtd_checkBox">
               <property name="text">
                <string/>
               </property>
@@ -168,11 +158,35 @@
              </widget>
             </item>
             <item row="9" column="1">
-             <widget class="QCheckBox" name="checkBox_7">
+             <widget class="QCheckBox" name="attr_com_crlf_checkBox">
               <property name="text">
                <string/>
               </property>
              </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="stab1Label_20">
+              <property name="text">
+               <string>condexec_inverse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QCheckBox" name="attr_com_condexec_inverse_checkBox">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="stab1Label_21">
+              <property name="text">
+               <string>counter</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="attr_com_counter_LineEdit"/>
             </item>
            </layout>
           </widget>

@@ -57,100 +57,103 @@ class Ui_MainWindow(object):
 
         self.formLayout_5.setWidget(0, QFormLayout.LabelRole, self.label_18)
 
-        self.lineEdit_17 = QLineEdit(self.scrollAreaWidgetContents_5)
-        self.lineEdit_17.setObjectName(u"lineEdit_17")
+        self.attr_com_start_rtd_LineEdit = QLineEdit(self.scrollAreaWidgetContents_5)
+        self.attr_com_start_rtd_LineEdit.setObjectName(u"attr_com_start_rtd_LineEdit")
 
-        self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.lineEdit_17)
+        self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.attr_com_start_rtd_LineEdit)
 
         self.label_19 = QLabel(self.scrollAreaWidgetContents_5)
         self.label_19.setObjectName(u"label_19")
 
         self.formLayout_5.setWidget(1, QFormLayout.LabelRole, self.label_19)
 
-        self.spinBox_8 = QSpinBox(self.scrollAreaWidgetContents_5)
-        self.spinBox_8.setObjectName(u"spinBox_8")
+        self.attr_com_rtd_spinBox = QSpinBox(self.scrollAreaWidgetContents_5)
+        self.attr_com_rtd_spinBox.setObjectName(u"attr_com_rtd_spinBox")
+        self.attr_com_rtd_spinBox.setMinimum(-1)
+        self.attr_com_rtd_spinBox.setValue(-1)
+        self.attr_com_rtd_spinBox.setDisplayIntegerBase(10)
 
-        self.formLayout_5.setWidget(1, QFormLayout.FieldRole, self.spinBox_8)
+        self.formLayout_5.setWidget(1, QFormLayout.FieldRole, self.attr_com_rtd_spinBox)
 
         self.stab1Label_18 = QLabel(self.scrollAreaWidgetContents_5)
         self.stab1Label_18.setObjectName(u"stab1Label_18")
 
         self.formLayout_5.setWidget(2, QFormLayout.LabelRole, self.stab1Label_18)
 
-        self.doubleSpinBox = QDoubleSpinBox(self.scrollAreaWidgetContents_5)
-        self.doubleSpinBox.setObjectName(u"doubleSpinBox")
+        self.attr_com_chance_doubleSpinBox = QDoubleSpinBox(self.scrollAreaWidgetContents_5)
+        self.attr_com_chance_doubleSpinBox.setObjectName(u"attr_com_chance_doubleSpinBox")
 
-        self.formLayout_5.setWidget(2, QFormLayout.FieldRole, self.doubleSpinBox)
+        self.formLayout_5.setWidget(2, QFormLayout.FieldRole, self.attr_com_chance_doubleSpinBox)
 
         self.stab1Label_16 = QLabel(self.scrollAreaWidgetContents_5)
         self.stab1Label_16.setObjectName(u"stab1Label_16")
 
         self.formLayout_5.setWidget(3, QFormLayout.LabelRole, self.stab1Label_16)
 
-        self.stab1LineEdit_16 = QLineEdit(self.scrollAreaWidgetContents_5)
-        self.stab1LineEdit_16.setObjectName(u"stab1LineEdit_16")
+        self.attr_com_next_LineEdit = QLineEdit(self.scrollAreaWidgetContents_5)
+        self.attr_com_next_LineEdit.setObjectName(u"attr_com_next_LineEdit")
 
-        self.formLayout_5.setWidget(3, QFormLayout.FieldRole, self.stab1LineEdit_16)
+        self.formLayout_5.setWidget(3, QFormLayout.FieldRole, self.attr_com_next_LineEdit)
 
         self.stab1Label_17 = QLabel(self.scrollAreaWidgetContents_5)
         self.stab1Label_17.setObjectName(u"stab1Label_17")
 
         self.formLayout_5.setWidget(4, QFormLayout.LabelRole, self.stab1Label_17)
 
-        self.stab1LineEdit_17 = QLineEdit(self.scrollAreaWidgetContents_5)
-        self.stab1LineEdit_17.setObjectName(u"stab1LineEdit_17")
+        self.attr_com_test_LineEdit = QLineEdit(self.scrollAreaWidgetContents_5)
+        self.attr_com_test_LineEdit.setObjectName(u"attr_com_test_LineEdit")
 
-        self.formLayout_5.setWidget(4, QFormLayout.FieldRole, self.stab1LineEdit_17)
+        self.formLayout_5.setWidget(4, QFormLayout.FieldRole, self.attr_com_test_LineEdit)
 
         self.stab1Label_19 = QLabel(self.scrollAreaWidgetContents_5)
         self.stab1Label_19.setObjectName(u"stab1Label_19")
 
         self.formLayout_5.setWidget(5, QFormLayout.LabelRole, self.stab1Label_19)
 
-        self.stab1LineEdit_19 = QLineEdit(self.scrollAreaWidgetContents_5)
-        self.stab1LineEdit_19.setObjectName(u"stab1LineEdit_19")
+        self.attr_com_condexec_LineEdit = QLineEdit(self.scrollAreaWidgetContents_5)
+        self.attr_com_condexec_LineEdit.setObjectName(u"attr_com_condexec_LineEdit")
 
-        self.formLayout_5.setWidget(5, QFormLayout.FieldRole, self.stab1LineEdit_19)
-
-        self.stab1Label_20 = QLabel(self.scrollAreaWidgetContents_5)
-        self.stab1Label_20.setObjectName(u"stab1Label_20")
-
-        self.formLayout_5.setWidget(6, QFormLayout.LabelRole, self.stab1Label_20)
-
-        self.stab1LineEdit_20 = QLineEdit(self.scrollAreaWidgetContents_5)
-        self.stab1LineEdit_20.setObjectName(u"stab1LineEdit_20")
-
-        self.formLayout_5.setWidget(6, QFormLayout.FieldRole, self.stab1LineEdit_20)
-
-        self.stab1Label_21 = QLabel(self.scrollAreaWidgetContents_5)
-        self.stab1Label_21.setObjectName(u"stab1Label_21")
-
-        self.formLayout_5.setWidget(7, QFormLayout.LabelRole, self.stab1Label_21)
-
-        self.stab1LineEdit_21 = QLineEdit(self.scrollAreaWidgetContents_5)
-        self.stab1LineEdit_21.setObjectName(u"stab1LineEdit_21")
-
-        self.formLayout_5.setWidget(7, QFormLayout.FieldRole, self.stab1LineEdit_21)
+        self.formLayout_5.setWidget(5, QFormLayout.FieldRole, self.attr_com_condexec_LineEdit)
 
         self.stab1Label_14 = QLabel(self.scrollAreaWidgetContents_5)
         self.stab1Label_14.setObjectName(u"stab1Label_14")
 
         self.formLayout_5.setWidget(8, QFormLayout.LabelRole, self.stab1Label_14)
 
-        self.checkBox_8 = QCheckBox(self.scrollAreaWidgetContents_5)
-        self.checkBox_8.setObjectName(u"checkBox_8")
+        self.attr_com_repeat_rtd_checkBox = QCheckBox(self.scrollAreaWidgetContents_5)
+        self.attr_com_repeat_rtd_checkBox.setObjectName(u"attr_com_repeat_rtd_checkBox")
 
-        self.formLayout_5.setWidget(8, QFormLayout.FieldRole, self.checkBox_8)
+        self.formLayout_5.setWidget(8, QFormLayout.FieldRole, self.attr_com_repeat_rtd_checkBox)
 
         self.stab1Label_15 = QLabel(self.scrollAreaWidgetContents_5)
         self.stab1Label_15.setObjectName(u"stab1Label_15")
 
         self.formLayout_5.setWidget(9, QFormLayout.LabelRole, self.stab1Label_15)
 
-        self.checkBox_7 = QCheckBox(self.scrollAreaWidgetContents_5)
-        self.checkBox_7.setObjectName(u"checkBox_7")
+        self.attr_com_crlf_checkBox = QCheckBox(self.scrollAreaWidgetContents_5)
+        self.attr_com_crlf_checkBox.setObjectName(u"attr_com_crlf_checkBox")
 
-        self.formLayout_5.setWidget(9, QFormLayout.FieldRole, self.checkBox_7)
+        self.formLayout_5.setWidget(9, QFormLayout.FieldRole, self.attr_com_crlf_checkBox)
+
+        self.stab1Label_20 = QLabel(self.scrollAreaWidgetContents_5)
+        self.stab1Label_20.setObjectName(u"stab1Label_20")
+
+        self.formLayout_5.setWidget(10, QFormLayout.LabelRole, self.stab1Label_20)
+
+        self.attr_com_condexec_inverse_checkBox = QCheckBox(self.scrollAreaWidgetContents_5)
+        self.attr_com_condexec_inverse_checkBox.setObjectName(u"attr_com_condexec_inverse_checkBox")
+
+        self.formLayout_5.setWidget(10, QFormLayout.FieldRole, self.attr_com_condexec_inverse_checkBox)
+
+        self.stab1Label_21 = QLabel(self.scrollAreaWidgetContents_5)
+        self.stab1Label_21.setObjectName(u"stab1Label_21")
+
+        self.formLayout_5.setWidget(6, QFormLayout.LabelRole, self.stab1Label_21)
+
+        self.attr_com_counter_LineEdit = QLineEdit(self.scrollAreaWidgetContents_5)
+        self.attr_com_counter_LineEdit.setObjectName(u"attr_com_counter_LineEdit")
+
+        self.formLayout_5.setWidget(6, QFormLayout.FieldRole, self.attr_com_counter_LineEdit)
 
         self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_5)
 
@@ -317,7 +320,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 142, 138))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 368, 399))
         self.formLayout_3 = QFormLayout(self.scrollAreaWidgetContents_2)
         self.formLayout_3.setObjectName(u"formLayout_3")
         self.label_retrans = QLabel(self.scrollAreaWidgetContents_2)
@@ -375,7 +378,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 223, 130))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 368, 399))
         self.formLayout_4 = QFormLayout(self.scrollAreaWidgetContents_3)
         self.formLayout_4.setObjectName(u"formLayout_4")
         self.label_milliseconds = QLabel(self.scrollAreaWidgetContents_3)
@@ -443,7 +446,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 299, 35))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 368, 399))
         self.gridLayout_8 = QGridLayout(self.scrollAreaWidgetContents_4)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.label_missing_attr = QLabel(self.scrollAreaWidgetContents_4)
@@ -583,7 +586,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.toolBox.setCurrentIndex(0)
-        self.stackedw_spec_attrs.setCurrentIndex(0)
+        self.stackedw_spec_attrs.setCurrentIndex(2)
         self.stackedw_content.setCurrentIndex(1)
         self.stackedWidget_2.setCurrentIndex(0)
 
@@ -604,12 +607,13 @@ class Ui_MainWindow(object):
         self.stab1Label_16.setText(QCoreApplication.translate("MainWindow", u"next", None))
         self.stab1Label_17.setText(QCoreApplication.translate("MainWindow", u"test", None))
         self.stab1Label_19.setText(QCoreApplication.translate("MainWindow", u"condexec", None))
-        self.stab1Label_20.setText(QCoreApplication.translate("MainWindow", u"condexec_inverse", None))
-        self.stab1Label_21.setText(QCoreApplication.translate("MainWindow", u"counter", None))
         self.stab1Label_14.setText(QCoreApplication.translate("MainWindow", u"repeat_rtd", None))
-        self.checkBox_8.setText("")
+        self.attr_com_repeat_rtd_checkBox.setText("")
         self.stab1Label_15.setText(QCoreApplication.translate("MainWindow", u"crlf", None))
-        self.checkBox_7.setText("")
+        self.attr_com_crlf_checkBox.setText("")
+        self.stab1Label_20.setText(QCoreApplication.translate("MainWindow", u"condexec_inverse", None))
+        self.attr_com_condexec_inverse_checkBox.setText("")
+        self.stab1Label_21.setText(QCoreApplication.translate("MainWindow", u"counter", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_common_attr), QCoreApplication.translate("MainWindow", u"Common attributes", None))
         self.label_response.setText(QCoreApplication.translate("MainWindow", u"response", None))
         self.label_request.setText(QCoreApplication.translate("MainWindow", u"request", None))
