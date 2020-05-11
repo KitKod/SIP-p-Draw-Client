@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -249,7 +249,14 @@
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="attr_response_spinBox"/>
+                 <widget class="QSpinBox" name="attr_response_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_request">
@@ -345,7 +352,14 @@
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QSpinBox" name="attr_lost_spinBox"/>
+                 <widget class="QSpinBox" name="attr_lost_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="3" column="0">
                  <widget class="QLabel" name="label_timeout">
@@ -355,7 +369,14 @@
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QSpinBox" name="attr_timeout_spinBox"/>
+                 <widget class="QSpinBox" name="attr_timeout_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="4" column="0">
                  <widget class="QLabel" name="label_ontimeout">
@@ -497,7 +518,14 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QSpinBox" name="attr_lost_send_spinBox"/>
+                 <widget class="QSpinBox" name="attr_lost_send_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_start_txn">
@@ -520,7 +548,14 @@
                  <widget class="QLineEdit" name="attr_ack_txn_LineEdit"/>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="attr_retrans_spinBox"/>
+                 <widget class="QSpinBox" name="attr_retrans_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -579,10 +614,24 @@
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QSpinBox" name="attr_milliseconds_spinBox"/>
+                 <widget class="QSpinBox" name="attr_milliseconds_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QSpinBox" name="attr_variable_spinBox"/>
+                 <widget class="QSpinBox" name="attr_variable_spinBox">
+                  <property name="minimum">
+                   <number>-1</number>
+                  </property>
+                  <property name="value">
+                   <number>-1</number>
+                  </property>
+                 </widget>
                 </item>
                 <item row="2" column="1">
                  <widget class="QComboBox" name="attr_distribution_comboBox">

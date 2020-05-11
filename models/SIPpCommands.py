@@ -6,66 +6,66 @@ class BaseCommand:
 
     """
     #: str:
-    start_rtd = None
+    start_rtd = ''
     #: int?:
-    rtd = None
+    rtd = -1
     #: bool:
     repeat_rtd = False
     #: bool:
     crlf = False
     #: str:
-    next = None
+    next = ''
     #: str:
-    test = None
+    test = ''
     #: float:
-    chance = None
+    chance = -1
     #: str:
-    condexec = None
+    condexec = ''
     #: bool:
     condexec_inverse = False
     #: str:
-    counter = None
+    counter = ''
     #: str?: contains data that located in command.
-    content = None
+    content = ''
 
 
 class SendCommand(BaseCommand):
     #: int:
-    retrans = None
+    retrans = -1
     #: int:
-    lost = None
+    lost = -1
     #: str?:
-    start_txn = None
+    start_txn = ''
     #: str?:
-    ack_txn = None
+    ack_txn = ''
 
 
 class RecvCommand(BaseCommand):
     #: int:
-    response = None
-    request = None
+    response = -1
+    request = ''
     optional = False
     ignoresdp = False
     rrs = False
     auth = False
     #: int:
-    lost = None
+    lost = -1
     #: int:
-    timeout = None
+    timeout = -1
     #: str?:
-    ontimeout = None
+    ontimeout = ''
     regexp_match = False
     #: str?
-    response_txn = None
+    response_txn = ''
 
 
 class PauseCommand(BaseCommand):
     #: int:
-    milliseconds = None
-    #: str?:
-    variable = None
+    milliseconds = -1
+    #: int?:
+    variable = -1
     #: str:
-    distribution = None
+    distribution = ''
     #: bool:
     sanity_check = True
 

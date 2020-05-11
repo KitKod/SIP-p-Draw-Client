@@ -187,6 +187,8 @@ class Ui_MainWindow(object):
 
         self.attr_response_spinBox = QSpinBox(self.scrollAreaWidgetContents)
         self.attr_response_spinBox.setObjectName(u"attr_response_spinBox")
+        self.attr_response_spinBox.setMinimum(-1)
+        self.attr_response_spinBox.setValue(-1)
 
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.attr_response_spinBox)
 
@@ -222,6 +224,8 @@ class Ui_MainWindow(object):
 
         self.attr_lost_spinBox = QSpinBox(self.scrollAreaWidgetContents)
         self.attr_lost_spinBox.setObjectName(u"attr_lost_spinBox")
+        self.attr_lost_spinBox.setMinimum(-1)
+        self.attr_lost_spinBox.setValue(-1)
 
         self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.attr_lost_spinBox)
 
@@ -232,6 +236,8 @@ class Ui_MainWindow(object):
 
         self.attr_timeout_spinBox = QSpinBox(self.scrollAreaWidgetContents)
         self.attr_timeout_spinBox.setObjectName(u"attr_timeout_spinBox")
+        self.attr_timeout_spinBox.setMinimum(-1)
+        self.attr_timeout_spinBox.setValue(-1)
 
         self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.attr_timeout_spinBox)
 
@@ -335,6 +341,8 @@ class Ui_MainWindow(object):
 
         self.attr_lost_send_spinBox = QSpinBox(self.scrollAreaWidgetContents_2)
         self.attr_lost_send_spinBox.setObjectName(u"attr_lost_send_spinBox")
+        self.attr_lost_send_spinBox.setMinimum(-1)
+        self.attr_lost_send_spinBox.setValue(-1)
 
         self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.attr_lost_send_spinBox)
 
@@ -360,6 +368,8 @@ class Ui_MainWindow(object):
 
         self.attr_retrans_spinBox = QSpinBox(self.scrollAreaWidgetContents_2)
         self.attr_retrans_spinBox.setObjectName(u"attr_retrans_spinBox")
+        self.attr_retrans_spinBox.setMinimum(-1)
+        self.attr_retrans_spinBox.setValue(-1)
 
         self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.attr_retrans_spinBox)
 
@@ -398,11 +408,15 @@ class Ui_MainWindow(object):
 
         self.attr_milliseconds_spinBox = QSpinBox(self.scrollAreaWidgetContents_3)
         self.attr_milliseconds_spinBox.setObjectName(u"attr_milliseconds_spinBox")
+        self.attr_milliseconds_spinBox.setMinimum(-1)
+        self.attr_milliseconds_spinBox.setValue(-1)
 
         self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.attr_milliseconds_spinBox)
 
         self.attr_variable_spinBox = QSpinBox(self.scrollAreaWidgetContents_3)
         self.attr_variable_spinBox.setObjectName(u"attr_variable_spinBox")
+        self.attr_variable_spinBox.setMinimum(-1)
+        self.attr_variable_spinBox.setValue(-1)
 
         self.formLayout_4.setWidget(1, QFormLayout.FieldRole, self.attr_variable_spinBox)
 
@@ -585,7 +599,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(1)
         self.stackedw_spec_attrs.setCurrentIndex(2)
         self.stackedw_content.setCurrentIndex(1)
         self.stackedWidget_2.setCurrentIndex(0)

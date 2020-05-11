@@ -7,7 +7,7 @@ from PySide2.QtWidgets import QApplication, QMainWindow, QHeaderView
 from SippDrawConf import getMainWindow, getUI
 from gui.ui_mainwindow import Ui_MainWindow
 from gui.TableBlock import TableBlock
-from models.SIPpCommands import SendCommand, RecvCommand, NopCommand
+from models.SIPpCommands import SendCommand, RecvCommand, NopCommand, PauseCommand
 from slots import slotAddRecvCommand, slotBlockWasClicked
 
 
@@ -26,7 +26,8 @@ def addItemToTable(button_name):
         item.setBackgroundColor(QColor('green'))
         ui.table_constructor.setItem(pos, 2, item)
     else:
-        item = TableBlock('Nop', NopCommand())
+        item = TableBlock('Pause', PauseCommand())
+        item.command.distribution = 'weibull'
         item.setBackgroundColor(QColor('white'))
         ui.table_constructor.setItem(pos, 1, item)
 
@@ -65,6 +66,15 @@ class MainWindow(QMainWindow):
 
         self.ui.attr_com_rtd_spinBox.setSpecialValueText('-')
         self.ui.attr_com_chance_doubleSpinBox.setSpecialValueText('-')
+        self.ui.attr_retrans_spinBox.setSpecialValueText('-')
+        self.ui.attr_lost_send_spinBox.setSpecialValueText('-')
+
+        self.ui.attr_response_spinBox.setSpecialValueText('-')
+        self.ui.attr_lost_spinBox.setSpecialValueText('-')
+        self.ui.attr_timeout_spinBox.setSpecialValueText('-')
+
+        self.ui.attr_milliseconds_spinBox.setSpecialValueText('-')
+        self.ui.attr_variable_spinBox.setSpecialValueText('-')
 
 
 if __name__ == "__main__":

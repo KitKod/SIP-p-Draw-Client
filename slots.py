@@ -3,7 +3,7 @@ from PySide2.QtGui import QColor
 
 from SippDrawConf import getUI
 from gui.TableBlock import TableBlock
-from models.SIPpCommands import RecvCommand
+from models.SIPpCommands import RecvCommand, SendCommand, NopCommand, PauseCommand
 
 
 @Slot()
@@ -18,6 +18,7 @@ def slotAddRecvCommand():
 
     block.command.crlf = True
     block.command.test = 'It is so cool :) I love QT!'
+    block.command.request = 'OPTIONS'
 
     block.setBackgroundColor(QColor('red'))
     ui.table_constructor.setItem(position_new_row, 0, block)
@@ -34,44 +35,55 @@ def slotBlockWasClicked(row, column):
     block = ui.table_constructor.currentItem()
     command = block.command
 
-    attr_com_start_rtd = '' if command.start_rtd is None else command.start_rtd
-    attr_com_rtd = '-' if command.rtd is None else command.rtd
-    attr_com_chance = '-' if command.chance is None else command.chance
-    attr_com_next = '' if command.next is None else command.next
-    attr_com_test = '' if command.test is None else command.test
-    attr_com_condexec = '' if command.condexec is None else command.condexec
-    attr_com_counter = '' if command.counter is None else command.counter
-    attr_com_repeat_rtd = command.repeat_rtd
-    attr_com_crlf = command.crlf
-    attr_com_condexec_inverse = command.condexec_inverse
+    ui.attr_com_rtd_spinBox.setValue(command.rtd)
+    ui.attr_com_chance_doubleSpinBox.setValue(command.chance)
 
-    print('rtd={}, chng={}'.format(attr_com_rtd, attr_com_chance))
-    # if isinstance(attr_com_rtd, str):
-    #     print('seted')
-    #     ui.attr_com_rtd_spinBox.setSpecialValueText(attr_com_rtd)
-    # else:
-    #     ui.attr_com_rtd_spinBox.setValue(attr_com_rtd)
-    #
-    # if isinstance(attr_com_chance, str):
-    #     ui.attr_com_chance_doubleSpinBox.setSpecialValueText(attr_com_chance)
-    # else:
-    #     ui.attr_com_chance_doubleSpinBox.setValue(attr_com_chance)
+    ui.attr_com_start_rtd_LineEdit.setText(command.start_rtd)
+    ui.attr_com_next_LineEdit.setText(command.next)
+    ui.attr_com_test_LineEdit.setText(command.test)
+    ui.attr_com_condexec_LineEdit.setText(command.condexec)
+    ui.attr_com_counter_LineEdit.setText(command.counter)
 
-    ui.attr_com_rtd_spinBox.setValue(-1)
-    ui.attr_com_chance_doubleSpinBox.setValue(-1)
-
-    ui.attr_com_start_rtd_LineEdit.setText(attr_com_start_rtd)
-    ui.attr_com_next_LineEdit.setText(attr_com_next)
-    ui.attr_com_test_LineEdit.setText(attr_com_test)
-    ui.attr_com_condexec_LineEdit.setText(attr_com_condexec)
-    ui.attr_com_counter_LineEdit.setText(attr_com_counter)
-
-    ui.attr_com_repeat_rtd_checkBox.setChecked(attr_com_repeat_rtd)
-    ui.attr_com_crlf_checkBox.setChecked(attr_com_crlf)
-    ui.attr_com_condexec_inverse_checkBox.setChecked(attr_com_condexec_inverse)
+    ui.attr_com_repeat_rtd_checkBox.setChecked(command.repeat_rtd)
+    ui.attr_com_crlf_checkBox.setChecked(command.crlf)
+    ui.attr_com_condexec_inverse_checkBox.setChecked(command.condexec_inverse)
 
     if isinstance(command, RecvCommand):
-        pass
+        ui.stackedw_spec_attrs.setCurrentIndex(0)
+
+        ui.attr_request_comboBox.setCurrentText(command.request)
+
+        ui.attr_response_spinBox.setValue(command.response)
+        ui.attr_lost_spinBox.setValue(command.lost)
+        ui.attr_timeout_spinBox.setValue(command.timeout)
+
+        ui.attr_ontimeout_LineEdit.setText(command.ontimeout)
+        ui.attr_response_txn_LineEdit.setText(command.response_txn)
+
+        ui.attr_optional_checkBox.setChecked(command.optional)
+        ui.attr_ignoresdp_checkBox.setChecked(command.ignoresdp)
+        ui.attr_rrs_checkBox.setChecked(command.rrs)
+        ui.attr_auth_checkBox.setChecked(command.auth)
+        ui.attr_regexp_match_checkBox.setChecked(command.regexp_match)
+    elif isinstance(command, SendCommand):
+        ui.stackedw_spec_attrs.setCurrentIndex(1)
+
+        ui.attr_retrans_spinBox.setValue(command.retrans)
+        ui.attr_lost_send_spinBox.setValue(command.lost)
+
+        ui.attr_start_txn_LineEdit.setText(command.start_txn)
+        ui.attr_ack_txn_LineEdit.setText(command.ack_txn)
+    elif isinstance(command, PauseCommand):
+        ui.stackedw_spec_attrs.setCurrentIndex(2)
+
+        ui.attr_milliseconds_spinBox.setValue(command.milliseconds)
+        ui.attr_variable_spinBox.setValue(command.variable)
+
+        ui.attr_distribution_comboBox.setCurrentText(command.distribution)
+
+        ui.attr_sanity_check_checkBox.setChecked(command.sanity_check)
+    else:
+        ui.stackedw_spec_attrs.setCurrentIndex(3)
 
 
 
