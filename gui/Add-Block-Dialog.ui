@@ -35,7 +35,7 @@
    <bool>false</bool>
   </property>
   <property name="modal">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="sizeConstraint">
@@ -44,7 +44,7 @@
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedw_add_block_dialog">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page_add_recv_send_block">
       <layout class="QFormLayout" name="formLayout">

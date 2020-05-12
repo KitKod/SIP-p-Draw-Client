@@ -29,7 +29,7 @@ class Ui_Add_Block_Dialog(object):
         Add_Block_Dialog.setMinimumSize(QSize(400, 0))
         Add_Block_Dialog.setMaximumSize(QSize(16777215, 16777215))
         Add_Block_Dialog.setSizeGripEnabled(False)
-        Add_Block_Dialog.setModal(False)
+        Add_Block_Dialog.setModal(True)
         self.gridLayout = QGridLayout(Add_Block_Dialog)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
@@ -97,7 +97,7 @@ class Ui_Add_Block_Dialog(object):
 
         self.retranslateUi(Add_Block_Dialog)
 
-        self.stackedw_add_block_dialog.setCurrentIndex(1)
+        self.stackedw_add_block_dialog.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Add_Block_Dialog)

@@ -4,6 +4,7 @@ from SippDrawConf import SippDrawConf
 from Slots import slotAddRecvCommand, slotAddSendCommand, slotAddActionCommand, slotBlockWasClicked
 from gui.ui_mainwindow import Ui_MainWindow
 from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
+from models.SIPpCommands import PauseCommand, NopCommand
 
 
 class MainWindow(QMainWindow):
@@ -53,7 +54,55 @@ class MainWindow(QMainWindow):
 
 class AddBlockDialog(QDialog):
 
+    action_cmd = None
+    action_template = None
+    recv_send_template = None
+    opened_page = 0
+
     def __init__(self):
         super(AddBlockDialog, self).__init__()
         self.ui = Ui_Add_Block_Dialog()
         self.ui.setupUi(self)
+
+        self.ui.buttonBox_action_block.accepted.connect(self.slotActionBlockAccepted)
+        self.ui.buttonBox_action_block.rejected.connect(self.slotActionBlockRejected)
+
+        self.ui.buttonBox_recv_send_block.accepted.connect(self.slotRecvSendBlockAccepted)
+        self.ui.buttonBox_recv_send_block.rejected.connect(self.slotRecvSendBlockRejected)
+
+    def slotActionBlockAccepted(self):
+        print('accept 1 it')
+        cmd = self.ui.comboBox_command_action_block.currentText()
+        template = self.ui.comboBox_template_action_block.currentText()
+
+        if cmd == 'nop':
+            self.action_cmd = NopCommand()
+        else:
+            self.action_cmd = PauseCommand()
+
+        if template != 'Empty command':
+            # initialize cmd object.
+            pass
+        self.accept()
+
+    def slotRecvSendBlockAccepted(self):
+        print('accept 2 it')
+        template = self.ui.comboBox_template_recv_send_block.currentText()
+
+        if template != 'Empty command':
+            # initialize cmd object.
+            pass
+        self.accept()
+
+    def slotActionBlockRejected(self):
+        print('close it')
+        self.reject()
+
+    def slotRecvSendBlockRejected(self):
+        print('close it')
+        self.reject()
+
+    def setPageToShow(self, pindex):
+        if pindex < 0 or pindex > self.ui.stackedw_add_block_dialog.count() - 1:
+            raise ValueError('Incorrect ({}) index of stackwidget page!'.format(pindex))
+        self.ui.stackedw_add_block_dialog.setCurrentIndex(pindex)

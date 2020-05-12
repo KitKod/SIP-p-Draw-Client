@@ -594,7 +594,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(2)
+        self.toolBox.setCurrentIndex(0)
         self.stackedw_spec_attrs.setCurrentIndex(3)
         self.stackedw_content.setCurrentIndex(1)
         self.stackedWidget_2.setCurrentIndex(0)

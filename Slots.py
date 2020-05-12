@@ -3,13 +3,21 @@ from PySide2.QtGui import QColor
 
 from SippDrawConf import getMUI, SippDrawConf
 from models.TableBlock import TableBlock
-from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand
+from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand, NopCommand
 
 
 @Slot()
 def slotAddRecvCommand():
     print('called - slotAddRecvCommand()')
     ui = getMUI()
+
+    from gui.Windows import AddBlockDialog
+    dialog_window = AddBlockDialog()
+    dialog_window.setPageToShow(0)
+    dialog_window.show()
+    dialog_window.exec_()
+    if dialog_window.result() == dialog_window.Rejected:
+        return
 
     position_new_row = ui.table_constructor.rowCount()
     ui.table_constructor.insertRow(position_new_row)
@@ -41,6 +49,14 @@ def slotAddRecvCommand():
 def slotAddSendCommand():
     print('called - slotAddSendCommand()')
     ui = getMUI()
+
+    from gui.Windows import AddBlockDialog
+    dialog_window = AddBlockDialog()
+    dialog_window.setPageToShow(0)
+    dialog_window.show()
+    dialog_window.exec_()
+    if dialog_window.result() == dialog_window.Rejected:
+        return
 
     position_new_row = ui.table_constructor.rowCount()
     ui.table_constructor.insertRow(position_new_row)
@@ -86,18 +102,29 @@ def slotAddSendCommand():
 
 @Slot()
 def slotAddActionCommand():
-    print('called - slotAddActionCommand()')
     ui = getMUI()
 
     from gui.Windows import AddBlockDialog
     dialog_window = AddBlockDialog()
+    dialog_window.setPageToShow(1)
     dialog_window.show()
     dialog_window.exec_()
+
+    if dialog_window.result() == dialog_window.Rejected:
+        return
 
     position_new_row = ui.table_constructor.rowCount()
     ui.table_constructor.insertRow(position_new_row)
 
-    block = TableBlock('NotConfigured', PauseCommand())
+    cmd = dialog_window.action_cmd
+    if isinstance(cmd, PauseCommand):
+        tmp_str = 'PauseNotConfigured'
+    elif isinstance(cmd, NopCommand):
+        tmp_str = 'NopNotConfigured'
+    else:
+        tmp_str = 'NotConfigured'
+
+    block = TableBlock(tmp_str, cmd)
 
     # ----------------------------------------------------------------------------------------------
     block.command.distribution = 'weibull'
