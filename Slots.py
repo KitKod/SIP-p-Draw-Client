@@ -2,8 +2,8 @@ from PySide2.QtCore import Slot
 from PySide2.QtGui import QColor
 
 from SippDrawConf import getUI, SippDrawConf
-from gui.TableBlock import TableBlock
-from models.SIPpCommands import RecvCommand, SendCommand, NopCommand, PauseCommand
+from models.TableBlock import TableBlock
+from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand
 
 
 @Slot()

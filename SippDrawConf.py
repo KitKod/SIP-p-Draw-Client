@@ -25,7 +25,7 @@ class SippDrawConf:
 
 def getMainWindow():
     if SippDrawConf.main_window is None:
-        from main import MainWindow
+        from gui.Windows import MainWindow
         SippDrawConf.main_window = MainWindow()
     return SippDrawConf.main_window
 

@@ -1,10 +1,8 @@
-import sys
+from PySide2.QtWidgets import QMainWindow, QHeaderView
 
-from PySide2.QtWidgets import QApplication, QMainWindow, QHeaderView
-
-from SippDrawConf import getMainWindow, SippDrawConf
+from SippDrawConf import SippDrawConf
+from Slots import slotAddRecvCommand, slotAddSendCommand, slotAddActionCommand, slotBlockWasClicked
 from gui.ui_mainwindow import Ui_MainWindow
-from slots import slotAddRecvCommand, slotAddSendCommand, slotAddActionCommand, slotBlockWasClicked
 
 
 class MainWindow(QMainWindow):
@@ -50,10 +48,3 @@ class MainWindow(QMainWindow):
 
         self.ui.attr_milliseconds_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_variable_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    getMainWindow().show()
-    sys.exit(app.exec_())
-
