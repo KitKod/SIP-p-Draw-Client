@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_block_dialog.ui'
+## Form generated from reading UI file 'Add-Block-Dialog.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.2
 ##
