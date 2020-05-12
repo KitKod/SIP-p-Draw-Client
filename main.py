@@ -1,35 +1,10 @@
 import sys
 
-from PySide2.QtCore import Slot
-from PySide2.QtGui import QColor
 from PySide2.QtWidgets import QApplication, QMainWindow, QHeaderView
 
-from SippDrawConf import getMainWindow, getUI
+from SippDrawConf import getMainWindow, SippDrawConf
 from gui.ui_mainwindow import Ui_MainWindow
-from gui.TableBlock import TableBlock
-from models.SIPpCommands import SendCommand, RecvCommand, NopCommand, PauseCommand
-from slots import slotAddRecvCommand, slotBlockWasClicked
-
-
-@Slot()
-def addItemToTable(button_name):
-    ui = getUI()
-    pos = ui.table_constructor.rowCount()
-    ui.table_constructor.insertRow(pos)
-
-    if 'pushButton_add_recv' in button_name:
-        item = TableBlock('200 OK', RecvCommand())
-        item.setBackgroundColor(QColor('red'))
-        ui.table_constructor.setItem(pos, 0, item)
-    elif 'pushButton_add_send' in button_name:
-        item = TableBlock('INVITE', SendCommand())
-        item.setBackgroundColor(QColor('green'))
-        ui.table_constructor.setItem(pos, 2, item)
-    else:
-        item = TableBlock('Pause', PauseCommand())
-        item.command.distribution = 'weibull'
-        item.setBackgroundColor(QColor('white'))
-        ui.table_constructor.setItem(pos, 1, item)
+from slots import slotAddRecvCommand, slotAddSendCommand, slotAddActionCommand, slotBlockWasClicked
 
 
 class MainWindow(QMainWindow):
@@ -44,37 +19,37 @@ class MainWindow(QMainWindow):
         self.__initConstructorTable()
         self.__initToolBox()
         self.__initButtons()
+        self.__initInputWidgets()
 
     def __initConstructorTable(self):
-        self.ui.table_constructor.setColumnCount(3)
-        self.ui.table_constructor.setHorizontalHeaderLabels(('recv', 'action', 'send'))
+        self.ui.table_constructor.setColumnCount(SippDrawConf.COUNT_OF_COLUMN)
+        self.ui.table_constructor.setHorizontalHeaderLabels(SippDrawConf.COLUMN_HEADERS)
         header = self.ui.table_constructor.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.Stretch)
-        header.setSectionResizeMode(1, QHeaderView.Stretch)
-        header.setSectionResizeMode(2, QHeaderView.Stretch)
+        header.setSectionResizeMode(SippDrawConf.RECV_CMD_COLUMN, QHeaderView.Stretch)
+        header.setSectionResizeMode(SippDrawConf.ACTION_CMD_COLUMN, QHeaderView.Stretch)
+        header.setSectionResizeMode(SippDrawConf.SEND_CMD_COLUMN, QHeaderView.Stretch)
         self.ui.table_constructor.cellClicked.connect(slotBlockWasClicked)
 
     def __initToolBox(self):
-        self.ui.toolBox.setCurrentIndex(0)
+        self.ui.toolBox.setCurrentIndex(SippDrawConf.TOOLBOX_COMM_ATTR_PAGE)
 
     def __initButtons(self):
         self.ui.pushButton_add_recv.clicked.connect(slotAddRecvCommand)
-        self.ui.pushButton_add_send.clicked.connect(
-            lambda: addItemToTable(self.ui.pushButton_add_send.objectName()))
-        self.ui.pushButton_add_action.clicked.connect(
-            lambda: addItemToTable(self.ui.pushButton_add_action.objectName()))
+        self.ui.pushButton_add_send.clicked.connect(slotAddSendCommand)
+        self.ui.pushButton_add_action.clicked.connect(slotAddActionCommand)
 
-        self.ui.attr_com_rtd_spinBox.setSpecialValueText('-')
-        self.ui.attr_com_chance_doubleSpinBox.setSpecialValueText('-')
-        self.ui.attr_retrans_spinBox.setSpecialValueText('-')
-        self.ui.attr_lost_send_spinBox.setSpecialValueText('-')
+    def __initInputWidgets(self):
+        self.ui.attr_com_rtd_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr_com_chance_doubleSpinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr_retrans_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr_lost_send_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
-        self.ui.attr_response_spinBox.setSpecialValueText('-')
-        self.ui.attr_lost_spinBox.setSpecialValueText('-')
-        self.ui.attr_timeout_spinBox.setSpecialValueText('-')
+        self.ui.attr_response_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr_lost_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr_timeout_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
-        self.ui.attr_milliseconds_spinBox.setSpecialValueText('-')
-        self.ui.attr_variable_spinBox.setSpecialValueText('-')
+        self.ui.attr_milliseconds_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr_variable_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
 
 if __name__ == "__main__":

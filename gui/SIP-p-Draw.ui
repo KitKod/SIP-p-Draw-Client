@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -210,7 +210,7 @@
         <item row="0" column="0">
          <widget class="QStackedWidget" name="stackedw_spec_attrs">
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="page_stackw_recv_cmd">
            <layout class="QGridLayout" name="gridLayout_4">
@@ -774,7 +774,7 @@
           <property name="currentIndex">
            <number>1</number>
           </property>
-          <widget class="QWidget" name="page_stackw_contentof_send">
+          <widget class="QWidget" name="page_stackw_content">
            <layout class="QGridLayout" name="gridLayout_10">
             <property name="leftMargin">
              <number>0</number>
@@ -789,7 +789,7 @@
              <number>0</number>
             </property>
             <item row="0" column="0">
-             <widget class="QTextEdit" name="texte_cdata">
+             <widget class="QTextEdit" name="texte_content">
               <property name="documentTitle">
                <string/>
               </property>
@@ -800,27 +800,28 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="page_stackw_contentof_nop">
-           <layout class="QFormLayout" name="formLayout">
+          <widget class="QWidget" name="page_stackw_content_stab">
+           <layout class="QGridLayout" name="gridLayout_11">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="label_missing_content">
               <property name="text">
-               <string>action</string>
+               <string>This command has not content.</string>
               </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QComboBox" name="comboBox_3">
-              <item>
-               <property name="text">
-                <string>-</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>exec</string>
-               </property>
-              </item>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
              </widget>
             </item>
            </layout>

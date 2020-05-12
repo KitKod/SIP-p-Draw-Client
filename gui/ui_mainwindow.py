@@ -485,34 +485,29 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.stackedw_content = QStackedWidget(self.page_content)
         self.stackedw_content.setObjectName(u"stackedw_content")
-        self.page_stackw_contentof_send = QWidget()
-        self.page_stackw_contentof_send.setObjectName(u"page_stackw_contentof_send")
-        self.gridLayout_10 = QGridLayout(self.page_stackw_contentof_send)
+        self.page_stackw_content = QWidget()
+        self.page_stackw_content.setObjectName(u"page_stackw_content")
+        self.gridLayout_10 = QGridLayout(self.page_stackw_content)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
         self.gridLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.texte_cdata = QTextEdit(self.page_stackw_contentof_send)
-        self.texte_cdata.setObjectName(u"texte_cdata")
+        self.texte_content = QTextEdit(self.page_stackw_content)
+        self.texte_content.setObjectName(u"texte_content")
 
-        self.gridLayout_10.addWidget(self.texte_cdata, 0, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.texte_content, 0, 0, 1, 1)
 
-        self.stackedw_content.addWidget(self.page_stackw_contentof_send)
-        self.page_stackw_contentof_nop = QWidget()
-        self.page_stackw_contentof_nop.setObjectName(u"page_stackw_contentof_nop")
-        self.formLayout = QFormLayout(self.page_stackw_contentof_nop)
-        self.formLayout.setObjectName(u"formLayout")
-        self.label = QLabel(self.page_stackw_contentof_nop)
-        self.label.setObjectName(u"label")
+        self.stackedw_content.addWidget(self.page_stackw_content)
+        self.page_stackw_content_stab = QWidget()
+        self.page_stackw_content_stab.setObjectName(u"page_stackw_content_stab")
+        self.gridLayout_11 = QGridLayout(self.page_stackw_content_stab)
+        self.gridLayout_11.setObjectName(u"gridLayout_11")
+        self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_missing_content = QLabel(self.page_stackw_content_stab)
+        self.label_missing_content.setObjectName(u"label_missing_content")
+        self.label_missing_content.setAlignment(Qt.AlignCenter)
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label)
+        self.gridLayout_11.addWidget(self.label_missing_content, 0, 0, 1, 1)
 
-        self.comboBox_3 = QComboBox(self.page_stackw_contentof_nop)
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.setObjectName(u"comboBox_3")
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.comboBox_3)
-
-        self.stackedw_content.addWidget(self.page_stackw_contentof_nop)
+        self.stackedw_content.addWidget(self.page_stackw_content_stab)
 
         self.gridLayout_2.addWidget(self.stackedw_content, 0, 0, 1, 1)
 
@@ -599,8 +594,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(1)
-        self.stackedw_spec_attrs.setCurrentIndex(2)
+        self.toolBox.setCurrentIndex(2)
+        self.stackedw_spec_attrs.setCurrentIndex(3)
         self.stackedw_content.setCurrentIndex(1)
         self.stackedWidget_2.setCurrentIndex(0)
 
@@ -683,12 +678,9 @@ class Ui_MainWindow(object):
         self.labal_sanity_check.setText(QCoreApplication.translate("MainWindow", u"sanity_check", None))
         self.label_missing_attr.setText(QCoreApplication.translate("MainWindow", u"This command has not specific attributes.", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_spec_attr), QCoreApplication.translate("MainWindow", u"Specific attributes", None))
-        self.texte_cdata.setDocumentTitle("")
-        self.texte_cdata.setPlaceholderText(QCoreApplication.translate("MainWindow", u"<![CDATA[. . .]]>", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"action", None))
-        self.comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"-", None))
-        self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"exec", None))
-
+        self.texte_content.setDocumentTitle("")
+        self.texte_content.setPlaceholderText(QCoreApplication.translate("MainWindow", u"<![CDATA[. . .]]>", None))
+        self.label_missing_content.setText(QCoreApplication.translate("MainWindow", u"This command has not content.", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_content), QCoreApplication.translate("MainWindow", u"Content", None))
         self.pushButton_add_recv.setText(QCoreApplication.translate("MainWindow", u"+", None))
         self.pushButton_add_action.setText(QCoreApplication.translate("MainWindow", u"+", None))
