@@ -1,8 +1,9 @@
-from PySide2.QtWidgets import QMainWindow, QHeaderView
+from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog
 
 from SippDrawConf import SippDrawConf
 from Slots import slotAddRecvCommand, slotAddSendCommand, slotAddActionCommand, slotBlockWasClicked
 from gui.ui_mainwindow import Ui_MainWindow
+from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
 
 
 class MainWindow(QMainWindow):
@@ -48,3 +49,11 @@ class MainWindow(QMainWindow):
 
         self.ui.attr_milliseconds_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_variable_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+
+
+class AddBlockDialog(QDialog):
+
+    def __init__(self):
+        super(AddBlockDialog, self).__init__()
+        self.ui = Ui_Add_Block_Dialog()
+        self.ui.setupUi(self)

@@ -1,7 +1,7 @@
 from PySide2.QtCore import Slot
 from PySide2.QtGui import QColor
 
-from SippDrawConf import getUI, SippDrawConf
+from SippDrawConf import getMUI, SippDrawConf
 from models.TableBlock import TableBlock
 from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand
 
@@ -9,7 +9,7 @@ from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand
 @Slot()
 def slotAddRecvCommand():
     print('called - slotAddRecvCommand()')
-    ui = getUI()
+    ui = getMUI()
 
     position_new_row = ui.table_constructor.rowCount()
     ui.table_constructor.insertRow(position_new_row)
@@ -40,7 +40,7 @@ def slotAddRecvCommand():
 @Slot()
 def slotAddSendCommand():
     print('called - slotAddSendCommand()')
-    ui = getUI()
+    ui = getMUI()
 
     position_new_row = ui.table_constructor.rowCount()
     ui.table_constructor.insertRow(position_new_row)
@@ -87,7 +87,12 @@ def slotAddSendCommand():
 @Slot()
 def slotAddActionCommand():
     print('called - slotAddActionCommand()')
-    ui = getUI()
+    ui = getMUI()
+
+    from gui.Windows import AddBlockDialog
+    dialog_window = AddBlockDialog()
+    dialog_window.show()
+    dialog_window.exec_()
 
     position_new_row = ui.table_constructor.rowCount()
     ui.table_constructor.insertRow(position_new_row)
@@ -109,7 +114,7 @@ def slotAddActionCommand():
 def slotBlockWasClicked(row, column):
     print("slotBlockWasClicked(): Row %d and Column %d was clicked" % (row, column))
 
-    ui = getUI()
+    ui = getMUI()
     block = ui.table_constructor.currentItem()
     command = block.command
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>dialog_add_block</class>
- <widget class="QDialog" name="dialog_add_block">
+ <class>Add_Block_Dialog</class>
+ <widget class="QDialog" name="Add_Block_Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>

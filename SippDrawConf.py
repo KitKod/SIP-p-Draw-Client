@@ -30,7 +30,7 @@ def getMainWindow():
     return SippDrawConf.main_window
 
 
-def getUI():
+def getMUI():
     if SippDrawConf.ui is None:
         SippDrawConf.ui = getMainWindow().ui
     return SippDrawConf.ui

@@ -16,24 +16,24 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
 from PySide2.QtWidgets import *
 
 
-class Ui_dialog_add_block(object):
-    def setupUi(self, dialog_add_block):
-        if not dialog_add_block.objectName():
-            dialog_add_block.setObjectName(u"dialog_add_block")
-        dialog_add_block.resize(400, 123)
+class Ui_Add_Block_Dialog(object):
+    def setupUi(self, Add_Block_Dialog):
+        if not Add_Block_Dialog.objectName():
+            Add_Block_Dialog.setObjectName(u"Add_Block_Dialog")
+        Add_Block_Dialog.resize(400, 123)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(dialog_add_block.sizePolicy().hasHeightForWidth())
-        dialog_add_block.setSizePolicy(sizePolicy)
-        dialog_add_block.setMinimumSize(QSize(400, 0))
-        dialog_add_block.setMaximumSize(QSize(16777215, 16777215))
-        dialog_add_block.setSizeGripEnabled(False)
-        dialog_add_block.setModal(False)
-        self.gridLayout = QGridLayout(dialog_add_block)
+        sizePolicy.setHeightForWidth(Add_Block_Dialog.sizePolicy().hasHeightForWidth())
+        Add_Block_Dialog.setSizePolicy(sizePolicy)
+        Add_Block_Dialog.setMinimumSize(QSize(400, 0))
+        Add_Block_Dialog.setMaximumSize(QSize(16777215, 16777215))
+        Add_Block_Dialog.setSizeGripEnabled(False)
+        Add_Block_Dialog.setModal(False)
+        self.gridLayout = QGridLayout(Add_Block_Dialog)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.stackedw_add_block_dialog = QStackedWidget(dialog_add_block)
+        self.stackedw_add_block_dialog = QStackedWidget(Add_Block_Dialog)
         self.stackedw_add_block_dialog.setObjectName(u"stackedw_add_block_dialog")
         self.page_add_recv_send_block = QWidget()
         self.page_add_recv_send_block.setObjectName(u"page_add_recv_send_block")
@@ -95,25 +95,25 @@ class Ui_dialog_add_block(object):
         self.gridLayout.addWidget(self.stackedw_add_block_dialog, 0, 0, 1, 1)
 
 
-        self.retranslateUi(dialog_add_block)
+        self.retranslateUi(Add_Block_Dialog)
 
         self.stackedw_add_block_dialog.setCurrentIndex(1)
 
 
-        QMetaObject.connectSlotsByName(dialog_add_block)
+        QMetaObject.connectSlotsByName(Add_Block_Dialog)
     # setupUi
 
-    def retranslateUi(self, dialog_add_block):
-        dialog_add_block.setWindowTitle(QCoreApplication.translate("dialog_add_block", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("dialog_add_block", u"Template", None))
-        self.comboBox_template_recv_send_block.setItemText(0, QCoreApplication.translate("dialog_add_block", u"Empty command", None))
+    def retranslateUi(self, Add_Block_Dialog):
+        Add_Block_Dialog.setWindowTitle(QCoreApplication.translate("Add_Block_Dialog", u"Dialog", None))
+        self.label.setText(QCoreApplication.translate("Add_Block_Dialog", u"Template", None))
+        self.comboBox_template_recv_send_block.setItemText(0, QCoreApplication.translate("Add_Block_Dialog", u"Empty command", None))
 
-        self.label_2.setText(QCoreApplication.translate("dialog_add_block", u"Command", None))
-        self.comboBox_command_action_block.setItemText(0, QCoreApplication.translate("dialog_add_block", u"nop", None))
-        self.comboBox_command_action_block.setItemText(1, QCoreApplication.translate("dialog_add_block", u"pause", None))
+        self.label_2.setText(QCoreApplication.translate("Add_Block_Dialog", u"Command", None))
+        self.comboBox_command_action_block.setItemText(0, QCoreApplication.translate("Add_Block_Dialog", u"nop", None))
+        self.comboBox_command_action_block.setItemText(1, QCoreApplication.translate("Add_Block_Dialog", u"pause", None))
 
-        self.label_3.setText(QCoreApplication.translate("dialog_add_block", u"Template", None))
-        self.comboBox_template_action_block.setItemText(0, QCoreApplication.translate("dialog_add_block", u"Empty command", None))
+        self.label_3.setText(QCoreApplication.translate("Add_Block_Dialog", u"Template", None))
+        self.comboBox_template_action_block.setItemText(0, QCoreApplication.translate("Add_Block_Dialog", u"Empty command", None))
 
     # retranslateUi
 
