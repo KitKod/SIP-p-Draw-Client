@@ -17,6 +17,9 @@ class SippDrawConf:
     STACK_CONTENT_PAGE = 0
     STACK_CONTENT_STAB_PAGE = 1
 
+    STACK_ADD_BLOCK_RECV_SEND_PAGE = 0
+    STACK_ADD_BLOCK_ACTION_PAGE = 1
+
     SPECIAL_VALUE_SPINBOX = '-'
 
     main_window = None

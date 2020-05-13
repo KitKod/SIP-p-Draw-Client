@@ -177,7 +177,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 368, 399))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 229, 316))
         self.formLayout_2 = QFormLayout(self.scrollAreaWidgetContents)
         self.formLayout_2.setObjectName(u"formLayout_2")
         self.label_response = QLabel(self.scrollAreaWidgetContents)
@@ -326,7 +326,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 368, 399))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 142, 138))
         self.formLayout_3 = QFormLayout(self.scrollAreaWidgetContents_2)
         self.formLayout_3.setObjectName(u"formLayout_3")
         self.label_retrans = QLabel(self.scrollAreaWidgetContents_2)
@@ -388,7 +388,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 368, 399))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 223, 130))
         self.formLayout_4 = QFormLayout(self.scrollAreaWidgetContents_3)
         self.formLayout_4.setObjectName(u"formLayout_4")
         self.label_milliseconds = QLabel(self.scrollAreaWidgetContents_3)
@@ -517,20 +517,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.pushButton_add_recv = QPushButton(self.centralwidget)
-        self.pushButton_add_recv.setObjectName(u"pushButton_add_recv")
+        self.pushButton_add_block_to_table = QPushButton(self.centralwidget)
+        self.pushButton_add_block_to_table.setObjectName(u"pushButton_add_block_to_table")
 
-        self.horizontalLayout.addWidget(self.pushButton_add_recv)
-
-        self.pushButton_add_action = QPushButton(self.centralwidget)
-        self.pushButton_add_action.setObjectName(u"pushButton_add_action")
-
-        self.horizontalLayout.addWidget(self.pushButton_add_action)
-
-        self.pushButton_add_send = QPushButton(self.centralwidget)
-        self.pushButton_add_send.setObjectName(u"pushButton_add_send")
-
-        self.horizontalLayout.addWidget(self.pushButton_add_send)
+        self.horizontalLayout.addWidget(self.pushButton_add_block_to_table)
 
 
         self.gridLayout.addLayout(self.horizontalLayout, 1, 0, 1, 1)
@@ -583,9 +573,7 @@ class Ui_MainWindow(object):
         self.toolBar = QToolBar(MainWindow)
         self.toolBar.setObjectName(u"toolBar")
         MainWindow.addToolBar(Qt.TopToolBarArea, self.toolBar)
-        QWidget.setTabOrder(self.pushButton_add_send, self.table_constructor)
-        QWidget.setTabOrder(self.table_constructor, self.pushButton_add_recv)
-        QWidget.setTabOrder(self.pushButton_add_recv, self.pushButton_add_action)
+        QWidget.setTabOrder(self.table_constructor, self.pushButton_add_block_to_table)
 
         self.menubar.addAction(self.menufile.menuAction())
         self.menubar.addAction(self.menuRun.menuAction())
@@ -594,7 +582,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(2)
         self.stackedw_spec_attrs.setCurrentIndex(3)
         self.stackedw_content.setCurrentIndex(1)
         self.stackedWidget_2.setCurrentIndex(0)
@@ -682,9 +670,7 @@ class Ui_MainWindow(object):
         self.texte_content.setPlaceholderText(QCoreApplication.translate("MainWindow", u"<![CDATA[. . .]]>", None))
         self.label_missing_content.setText(QCoreApplication.translate("MainWindow", u"This command has not content.", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_content), QCoreApplication.translate("MainWindow", u"Content", None))
-        self.pushButton_add_recv.setText(QCoreApplication.translate("MainWindow", u"+", None))
-        self.pushButton_add_action.setText(QCoreApplication.translate("MainWindow", u"+", None))
-        self.pushButton_add_send.setText(QCoreApplication.translate("MainWindow", u"+", None))
+        self.pushButton_add_block_to_table.setText(QCoreApplication.translate("MainWindow", u"+", None))
         self.pushButton_change.setText(QCoreApplication.translate("MainWindow", u"Change", None))
         self.pushButton_delete.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
         self.menufile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
