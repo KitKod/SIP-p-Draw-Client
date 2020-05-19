@@ -33,7 +33,7 @@ class SendCommand(BaseCommand):
     #: int:
     retrans = -1
     #: int:
-    lost = -1
+    send_lost = -1
     #: str?:
     start_txn = ''
     #: str?:
@@ -43,7 +43,7 @@ class SendCommand(BaseCommand):
 class RecvCommand(BaseCommand):
     #: int:
     response = -1
-    request = ''
+    request = '-'
     optional = False
     ignoresdp = False
     rrs = False

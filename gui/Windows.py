@@ -1,6 +1,7 @@
 from PySide2.QtCore import Slot
 from PySide2.QtGui import QColor
-from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog
+from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpinBox, QCheckBox,\
+    QComboBox, QTextEdit
 
 from SippDrawConf import SippDrawConf
 from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
@@ -102,31 +103,53 @@ class MainWindow(QMainWindow):
         self.ui.attr_retrans_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_lost_send_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
-        self.ui.attr_response_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__response__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_lost_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_timeout_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
         self.ui.attr_milliseconds_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_variable_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
-        # --- Test signals to make edit in blocks (shall be deleted)--------------------------------
-        # def test(*args):
-        #     print('was printed {}'.format(args))
-            # doc = self.ui.texte_content.document()
-            # print('is mode ?=', doc.isModified())
-            #
-            # block = self.ui.table_constructor.currentItem()
-            # command = block.command
-            #
-            # print('cmd={}, trext={}'.format(command, self.ui.texte_content.toPlainText()))
-            # command.content = self.ui.texte_content.toPlainText()
+        # Setup slots for edit signals
 
-        # self.ui.attr_com_start_rtd_LineEdit.editingFinished.connect(test)
-        # self.ui.texte_content.textChanged.connect(test)
-        # self.ui.attr_com_rtd_spinBox.valueChanged.connect(test)
-        # self.ui.attr_com_repeat_rtd_checkBox.stateChanged.connect(test)
+        self.ui.attr__start_rtd__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__start_rtd__LineEdit))
 
-        # ------------------------------------------------------------------------------------------
+        self.ui.attr__request__comboBox.currentTextChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__request__comboBox, x))
+
+        self.ui.attr__optional__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__optional__checkBox, x))
+
+        self.ui.attr__response__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__response__spinBox, x))
+
+        self.ui.texte__content.textChanged.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.texte__content))
+
+    @Slot()
+    def slotHandleLineEditsEdit(self, widget, *args):
+        command = self.ui.table_constructor.currentItem().command
+        attr_name = widget.objectName().split('__')[1]
+
+        new_value = None
+        if isinstance(widget, QLineEdit):
+            new_value = widget.text()
+        elif isinstance(widget, (QComboBox, QSpinBox)):
+            new_value = args[0]
+        elif isinstance(widget, QCheckBox):
+            new_value = bool(args[0])
+        elif isinstance(widget, QTextEdit):
+            new_value = widget.toPlainText()
+
+        if not hasattr(command, attr_name):
+            raise AttributeError('The {} attribute is not exist iin the!'.format(attr_name, command))
+        elif new_value is None:
+            raise ValueError('Value is not got from widget!')
+
+        print('new_value={}; arr_name={}'.format(new_value, attr_name))
+
+        setattr(command, attr_name, new_value)
 
     @Slot()
     def slotAddBlockToTable(self):
