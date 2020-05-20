@@ -33,7 +33,7 @@ class SendCommand(BaseCommand):
     #: int:
     retrans = -1
     #: int:
-    send_lost = -1
+    lost_send = -1
     #: str?:
     start_txn = ''
     #: str?:
@@ -65,7 +65,7 @@ class PauseCommand(BaseCommand):
     #: int?:
     variable = -1
     #: str:
-    distribution = ''
+    distribution = '-'
     #: bool:
     sanity_check = True
 

@@ -100,15 +100,15 @@ class MainWindow(QMainWindow):
     def __initInputWidgets(self):
         self.ui.attr__rtd__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr__chance__doubleSpinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-        self.ui.attr_retrans_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-        self.ui.attr_lost_send_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__retrans__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__lost_send__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
         self.ui.attr__response__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr__lost__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr__timeout__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
-        self.ui.attr_milliseconds_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-        self.ui.attr_variable_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__milliseconds__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__variable__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
         # Setup slots for edit signals
 
@@ -158,8 +158,27 @@ class MainWindow(QMainWindow):
         self.ui.attr__regexp_match__checkBox.stateChanged.connect(
             lambda x: self.slotHandleLineEditsEdit(self.ui.attr__regexp_match__checkBox, x))
 
+        # 2 section: Specific attrs for send command
+        self.ui.attr__retrans__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__retrans__spinBox, x))
+        self.ui.attr__lost_send__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__lost_send__spinBox, x))
+        self.ui.attr__start_txn__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__start_txn__LineEdit))
+        self.ui.attr__ack_txn__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__ack_txn__LineEdit))
 
+        # 2 section: Specific attrs for pause command
+        self.ui.attr__milliseconds__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__milliseconds__spinBox, x))
+        self.ui.attr__variable__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__variable__spinBox, x))
+        self.ui.attr__distribution__comboBox.currentTextChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__distribution__comboBox, x))
+        self.ui.attr__sanity_check__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__sanity_check__checkBox, x))
 
+        # 3 section: Specific content for command
         self.ui.texte__content.textChanged.connect(
             lambda: self.slotHandleLineEditsEdit(self.ui.texte__content))
 
@@ -179,7 +198,7 @@ class MainWindow(QMainWindow):
             new_value = widget.toPlainText()
 
         if not hasattr(command, attr_name):
-            raise AttributeError('The {} attribute is not exist iin the!'.format(attr_name, command))
+            raise AttributeError('The {} attribute is not exist in the {}!'.format(attr_name, command))
         elif new_value is None:
             raise ValueError('Value is not got from widget!')
 

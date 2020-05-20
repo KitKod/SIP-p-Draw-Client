@@ -46,11 +46,11 @@ class UIModelController:
         elif isinstance(command, SendCommand):
             ui.stackedw_spec_attrs.setCurrentIndex(SippDrawConf.STACK_SPEC_ATTR_SEND_PAGE)
 
-            ui.attr_retrans_spinBox.setValue(command.retrans)
-            ui.attr_lost_send_spinBox.setValue(command.send_lost)
+            ui.attr__retrans__spinBox.setValue(command.retrans)
+            ui.attr__lost_send__spinBox.setValue(command.lost_send)
 
-            ui.attr_start_txn_LineEdit.setText(command.start_txn)
-            ui.attr_ack_txn_LineEdit.setText(command.ack_txn)
+            ui.attr__start_txn__LineEdit.setText(command.start_txn)
+            ui.attr__ack_txn__LineEdit.setText(command.ack_txn)
 
             ui.stackedw_content.setCurrentIndex(SippDrawConf.STACK_CONTENT_PAGE)
             ui.texte__content.setText(command.content)
@@ -58,12 +58,12 @@ class UIModelController:
         elif isinstance(command, PauseCommand):
             ui.stackedw_spec_attrs.setCurrentIndex(SippDrawConf.STACK_SPEC_ATTR_PAUSE_PAGE)
 
-            ui.attr_milliseconds_spinBox.setValue(command.milliseconds)
-            ui.attr_variable_spinBox.setValue(command.variable)
+            ui.attr__milliseconds__spinBox.setValue(command.milliseconds)
+            ui.attr__variable__spinBox.setValue(command.variable)
 
-            ui.attr_distribution_comboBox.setCurrentText(command.distribution)
+            ui.attr__distribution__comboBox.setCurrentText(command.distribution)
 
-            ui.attr_sanity_check_checkBox.setChecked(command.sanity_check)
+            ui.attr__sanity_check__checkBox.setChecked(command.sanity_check)
 
             ui.stackedw_content.setCurrentIndex(SippDrawConf.STACK_CONTENT_STAB_PAGE)
         else:
