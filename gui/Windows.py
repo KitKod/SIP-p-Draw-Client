@@ -1,7 +1,7 @@
 from PySide2.QtCore import Slot
 from PySide2.QtGui import QColor
 from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpinBox, QCheckBox,\
-    QComboBox, QTextEdit
+    QComboBox, QTextEdit, QDoubleSpinBox
 
 from SippDrawConf import SippDrawConf
 from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
@@ -98,8 +98,8 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_add_block_to_table.clicked.connect(self.slotAddBlockToTable)
 
     def __initInputWidgets(self):
-        self.ui.attr_com_rtd_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-        self.ui.attr_com_chance_doubleSpinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__rtd__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__chance__doubleSpinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_retrans_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_lost_send_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
@@ -112,8 +112,28 @@ class MainWindow(QMainWindow):
 
         # Setup slots for edit signals
 
+        # 1 section: common attrs
         self.ui.attr__start_rtd__LineEdit.editingFinished.connect(
             lambda: self.slotHandleLineEditsEdit(self.ui.attr__start_rtd__LineEdit))
+        self.ui.attr__rtd__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__rtd__spinBox, x))
+        self.ui.attr__chance__doubleSpinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__chance__doubleSpinBox, x))
+        self.ui.attr__next__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__next__LineEdit))
+        self.ui.attr__test__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__test__LineEdit))
+        self.ui.attr__condexec__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__condexec__LineEdit))
+        self.ui.attr__counter__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__counter__LineEdit))
+        self.ui.attr__repeat_rtd__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__repeat_rtd__checkBox, x))
+        self.ui.attr__crlf__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__crlf__checkBox, x))
+        self.ui.attr__condexec_inverse__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__condexec_inverse__checkBox, x))
+
 
         self.ui.attr__request__comboBox.currentTextChanged.connect(
             lambda x: self.slotHandleLineEditsEdit(self.ui.attr__request__comboBox, x))
@@ -135,7 +155,7 @@ class MainWindow(QMainWindow):
         new_value = None
         if isinstance(widget, QLineEdit):
             new_value = widget.text()
-        elif isinstance(widget, (QComboBox, QSpinBox)):
+        elif isinstance(widget, (QComboBox, QSpinBox, QDoubleSpinBox)):
             new_value = args[0]
         elif isinstance(widget, QCheckBox):
             new_value = bool(args[0])

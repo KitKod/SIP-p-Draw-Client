@@ -10,18 +10,18 @@ class UIModelController:
 
     def displayCommandDataInAttrPages(self, command):
         ui = self.ui
-        ui.attr_com_rtd_spinBox.setValue(command.rtd)
-        ui.attr_com_chance_doubleSpinBox.setValue(command.chance)
+        ui.attr__rtd__spinBox.setValue(command.rtd)
+        ui.attr__chance__doubleSpinBox.setValue(command.chance)
 
         ui.attr__start_rtd__LineEdit.setText(command.start_rtd)
-        ui.attr_com_next_LineEdit.setText(command.next)
-        ui.attr_com_test_LineEdit.setText(command.test)
-        ui.attr_com_condexec_LineEdit.setText(command.condexec)
-        ui.attr_com_counter_LineEdit.setText(command.counter)
+        ui.attr__next__LineEdit.setText(command.next)
+        ui.attr__test__LineEdit.setText(command.test)
+        ui.attr__condexec__LineEdit.setText(command.condexec)
+        ui.attr__counter__LineEdit.setText(command.counter)
 
-        ui.attr_com_repeat_rtd_checkBox.setChecked(command.repeat_rtd)
-        ui.attr_com_crlf_checkBox.setChecked(command.crlf)
-        ui.attr_com_condexec_inverse_checkBox.setChecked(command.condexec_inverse)
+        ui.attr__repeat_rtd__checkBox.setChecked(command.repeat_rtd)
+        ui.attr__crlf__checkBox.setChecked(command.crlf)
+        ui.attr__condexec_inverse__checkBox.setChecked(command.condexec_inverse)
 
         if isinstance(command, RecvCommand):
             ui.stackedw_spec_attrs.setCurrentIndex(SippDrawConf.STACK_SPEC_ATTR_RECV_PAGE)

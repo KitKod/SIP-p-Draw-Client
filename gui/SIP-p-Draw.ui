@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -84,7 +84,7 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QSpinBox" name="attr_com_rtd_spinBox">
+             <widget class="QSpinBox" name="attr__rtd__spinBox">
               <property name="minimum">
                <number>-1</number>
               </property>
@@ -104,7 +104,7 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QDoubleSpinBox" name="attr_com_chance_doubleSpinBox"/>
+             <widget class="QDoubleSpinBox" name="attr__chance__doubleSpinBox"/>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="stab1Label_16">
@@ -114,7 +114,7 @@
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QLineEdit" name="attr_com_next_LineEdit"/>
+             <widget class="QLineEdit" name="attr__next__LineEdit"/>
             </item>
             <item row="4" column="0">
              <widget class="QLabel" name="stab1Label_17">
@@ -124,7 +124,7 @@
              </widget>
             </item>
             <item row="4" column="1">
-             <widget class="QLineEdit" name="attr_com_test_LineEdit"/>
+             <widget class="QLineEdit" name="attr__test__LineEdit"/>
             </item>
             <item row="5" column="0">
              <widget class="QLabel" name="stab1Label_19">
@@ -134,7 +134,7 @@
              </widget>
             </item>
             <item row="5" column="1">
-             <widget class="QLineEdit" name="attr_com_condexec_LineEdit"/>
+             <widget class="QLineEdit" name="attr__condexec__LineEdit"/>
             </item>
             <item row="8" column="0">
              <widget class="QLabel" name="stab1Label_14">
@@ -144,7 +144,7 @@
              </widget>
             </item>
             <item row="8" column="1">
-             <widget class="QCheckBox" name="attr_com_repeat_rtd_checkBox">
+             <widget class="QCheckBox" name="attr__repeat_rtd__checkBox">
               <property name="text">
                <string/>
               </property>
@@ -158,7 +158,7 @@
              </widget>
             </item>
             <item row="9" column="1">
-             <widget class="QCheckBox" name="attr_com_crlf_checkBox">
+             <widget class="QCheckBox" name="attr__crlf__checkBox">
               <property name="text">
                <string/>
               </property>
@@ -172,7 +172,7 @@
              </widget>
             </item>
             <item row="10" column="1">
-             <widget class="QCheckBox" name="attr_com_condexec_inverse_checkBox">
+             <widget class="QCheckBox" name="attr__condexec_inverse__checkBox">
               <property name="text">
                <string/>
               </property>
@@ -186,7 +186,7 @@
              </widget>
             </item>
             <item row="6" column="1">
-             <widget class="QLineEdit" name="attr_com_counter_LineEdit"/>
+             <widget class="QLineEdit" name="attr__counter__LineEdit"/>
             </item>
            </layout>
           </widget>
@@ -498,8 +498,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>399</height>
+                 <width>142</width>
+                 <height>138</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_3">
@@ -587,8 +587,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>399</height>
+                 <width>223</width>
+                 <height>130</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_4">
@@ -731,8 +731,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>399</height>
+                 <width>299</width>
+                 <height>35</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_8">
