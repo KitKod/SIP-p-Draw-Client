@@ -222,44 +222,44 @@ class Ui_MainWindow(object):
 
         self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.label_lost)
 
-        self.attr_lost_spinBox = QSpinBox(self.scrollAreaWidgetContents)
-        self.attr_lost_spinBox.setObjectName(u"attr_lost_spinBox")
-        self.attr_lost_spinBox.setMinimum(-1)
-        self.attr_lost_spinBox.setValue(-1)
+        self.attr__lost__spinBox = QSpinBox(self.scrollAreaWidgetContents)
+        self.attr__lost__spinBox.setObjectName(u"attr__lost__spinBox")
+        self.attr__lost__spinBox.setMinimum(-1)
+        self.attr__lost__spinBox.setValue(-1)
 
-        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.attr_lost_spinBox)
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.attr__lost__spinBox)
 
         self.label_timeout = QLabel(self.scrollAreaWidgetContents)
         self.label_timeout.setObjectName(u"label_timeout")
 
         self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.label_timeout)
 
-        self.attr_timeout_spinBox = QSpinBox(self.scrollAreaWidgetContents)
-        self.attr_timeout_spinBox.setObjectName(u"attr_timeout_spinBox")
-        self.attr_timeout_spinBox.setMinimum(-1)
-        self.attr_timeout_spinBox.setValue(-1)
+        self.attr__timeout__spinBox = QSpinBox(self.scrollAreaWidgetContents)
+        self.attr__timeout__spinBox.setObjectName(u"attr__timeout__spinBox")
+        self.attr__timeout__spinBox.setMinimum(-1)
+        self.attr__timeout__spinBox.setValue(-1)
 
-        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.attr_timeout_spinBox)
+        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.attr__timeout__spinBox)
 
         self.label_ontimeout = QLabel(self.scrollAreaWidgetContents)
         self.label_ontimeout.setObjectName(u"label_ontimeout")
 
         self.formLayout_2.setWidget(4, QFormLayout.LabelRole, self.label_ontimeout)
 
-        self.attr_ontimeout_LineEdit = QLineEdit(self.scrollAreaWidgetContents)
-        self.attr_ontimeout_LineEdit.setObjectName(u"attr_ontimeout_LineEdit")
+        self.attr__ontimeout__LineEdit = QLineEdit(self.scrollAreaWidgetContents)
+        self.attr__ontimeout__LineEdit.setObjectName(u"attr__ontimeout__LineEdit")
 
-        self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.attr_ontimeout_LineEdit)
+        self.formLayout_2.setWidget(4, QFormLayout.FieldRole, self.attr__ontimeout__LineEdit)
 
         self.label_response_txn = QLabel(self.scrollAreaWidgetContents)
         self.label_response_txn.setObjectName(u"label_response_txn")
 
         self.formLayout_2.setWidget(5, QFormLayout.LabelRole, self.label_response_txn)
 
-        self.attr_response_txn_LineEdit = QLineEdit(self.scrollAreaWidgetContents)
-        self.attr_response_txn_LineEdit.setObjectName(u"attr_response_txn_LineEdit")
+        self.attr__response_txn__LineEdit = QLineEdit(self.scrollAreaWidgetContents)
+        self.attr__response_txn__LineEdit.setObjectName(u"attr__response_txn__LineEdit")
 
-        self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.attr_response_txn_LineEdit)
+        self.formLayout_2.setWidget(5, QFormLayout.FieldRole, self.attr__response_txn__LineEdit)
 
         self.label_optional = QLabel(self.scrollAreaWidgetContents)
         self.label_optional.setObjectName(u"label_optional")
@@ -276,40 +276,40 @@ class Ui_MainWindow(object):
 
         self.formLayout_2.setWidget(7, QFormLayout.LabelRole, self.label_ignoresdp)
 
-        self.attr_ignoresdp_checkBox = QCheckBox(self.scrollAreaWidgetContents)
-        self.attr_ignoresdp_checkBox.setObjectName(u"attr_ignoresdp_checkBox")
+        self.attr__ignoresdp__checkBox = QCheckBox(self.scrollAreaWidgetContents)
+        self.attr__ignoresdp__checkBox.setObjectName(u"attr__ignoresdp__checkBox")
 
-        self.formLayout_2.setWidget(7, QFormLayout.FieldRole, self.attr_ignoresdp_checkBox)
+        self.formLayout_2.setWidget(7, QFormLayout.FieldRole, self.attr__ignoresdp__checkBox)
 
         self.label_rrs = QLabel(self.scrollAreaWidgetContents)
         self.label_rrs.setObjectName(u"label_rrs")
 
         self.formLayout_2.setWidget(8, QFormLayout.LabelRole, self.label_rrs)
 
-        self.attr_rrs_checkBox = QCheckBox(self.scrollAreaWidgetContents)
-        self.attr_rrs_checkBox.setObjectName(u"attr_rrs_checkBox")
+        self.attr__rrs__checkBox = QCheckBox(self.scrollAreaWidgetContents)
+        self.attr__rrs__checkBox.setObjectName(u"attr__rrs__checkBox")
 
-        self.formLayout_2.setWidget(8, QFormLayout.FieldRole, self.attr_rrs_checkBox)
+        self.formLayout_2.setWidget(8, QFormLayout.FieldRole, self.attr__rrs__checkBox)
 
         self.label_auth = QLabel(self.scrollAreaWidgetContents)
         self.label_auth.setObjectName(u"label_auth")
 
         self.formLayout_2.setWidget(9, QFormLayout.LabelRole, self.label_auth)
 
-        self.attr_auth_checkBox = QCheckBox(self.scrollAreaWidgetContents)
-        self.attr_auth_checkBox.setObjectName(u"attr_auth_checkBox")
+        self.attr__auth__checkBox = QCheckBox(self.scrollAreaWidgetContents)
+        self.attr__auth__checkBox.setObjectName(u"attr__auth__checkBox")
 
-        self.formLayout_2.setWidget(9, QFormLayout.FieldRole, self.attr_auth_checkBox)
+        self.formLayout_2.setWidget(9, QFormLayout.FieldRole, self.attr__auth__checkBox)
 
         self.label_regexp_match = QLabel(self.scrollAreaWidgetContents)
         self.label_regexp_match.setObjectName(u"label_regexp_match")
 
         self.formLayout_2.setWidget(10, QFormLayout.LabelRole, self.label_regexp_match)
 
-        self.attr_regexp_match_checkBox = QCheckBox(self.scrollAreaWidgetContents)
-        self.attr_regexp_match_checkBox.setObjectName(u"attr_regexp_match_checkBox")
+        self.attr__regexp_match__checkBox = QCheckBox(self.scrollAreaWidgetContents)
+        self.attr__regexp_match__checkBox.setObjectName(u"attr__regexp_match__checkBox")
 
-        self.formLayout_2.setWidget(10, QFormLayout.FieldRole, self.attr_regexp_match_checkBox)
+        self.formLayout_2.setWidget(10, QFormLayout.FieldRole, self.attr__regexp_match__checkBox)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -326,7 +326,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 142, 138))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 368, 399))
         self.formLayout_3 = QFormLayout(self.scrollAreaWidgetContents_2)
         self.formLayout_3.setObjectName(u"formLayout_3")
         self.label_retrans = QLabel(self.scrollAreaWidgetContents_2)
@@ -582,7 +582,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(1)
         self.stackedw_spec_attrs.setCurrentIndex(0)
         self.stackedw_content.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
@@ -637,13 +637,13 @@ class Ui_MainWindow(object):
         self.label_optional.setText(QCoreApplication.translate("MainWindow", u"optional", None))
         self.attr__optional__checkBox.setText("")
         self.label_ignoresdp.setText(QCoreApplication.translate("MainWindow", u"ignoresdp", None))
-        self.attr_ignoresdp_checkBox.setText("")
+        self.attr__ignoresdp__checkBox.setText("")
         self.label_rrs.setText(QCoreApplication.translate("MainWindow", u"rrs", None))
-        self.attr_rrs_checkBox.setText("")
+        self.attr__rrs__checkBox.setText("")
         self.label_auth.setText(QCoreApplication.translate("MainWindow", u"auth", None))
-        self.attr_auth_checkBox.setText("")
+        self.attr__auth__checkBox.setText("")
         self.label_regexp_match.setText(QCoreApplication.translate("MainWindow", u"regexp_match", None))
-        self.attr_regexp_match_checkBox.setText("")
+        self.attr__regexp_match__checkBox.setText("")
         self.label_retrans.setText(QCoreApplication.translate("MainWindow", u"retrans", None))
         self.label_lost_send.setText(QCoreApplication.translate("MainWindow", u"lost", None))
         self.label_start_txn.setText(QCoreApplication.translate("MainWindow", u"start_txn", None))

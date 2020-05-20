@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -352,7 +352,7 @@
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QSpinBox" name="attr_lost_spinBox">
+                 <widget class="QSpinBox" name="attr__lost__spinBox">
                   <property name="minimum">
                    <number>-1</number>
                   </property>
@@ -369,7 +369,7 @@
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QSpinBox" name="attr_timeout_spinBox">
+                 <widget class="QSpinBox" name="attr__timeout__spinBox">
                   <property name="minimum">
                    <number>-1</number>
                   </property>
@@ -386,7 +386,7 @@
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="attr_ontimeout_LineEdit"/>
+                 <widget class="QLineEdit" name="attr__ontimeout__LineEdit"/>
                 </item>
                 <item row="5" column="0">
                  <widget class="QLabel" name="label_response_txn">
@@ -396,7 +396,7 @@
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QLineEdit" name="attr_response_txn_LineEdit"/>
+                 <widget class="QLineEdit" name="attr__response_txn__LineEdit"/>
                 </item>
                 <item row="6" column="0">
                  <widget class="QLabel" name="label_optional">
@@ -420,7 +420,7 @@
                  </widget>
                 </item>
                 <item row="7" column="1">
-                 <widget class="QCheckBox" name="attr_ignoresdp_checkBox">
+                 <widget class="QCheckBox" name="attr__ignoresdp__checkBox">
                   <property name="text">
                    <string/>
                   </property>
@@ -434,7 +434,7 @@
                  </widget>
                 </item>
                 <item row="8" column="1">
-                 <widget class="QCheckBox" name="attr_rrs_checkBox">
+                 <widget class="QCheckBox" name="attr__rrs__checkBox">
                   <property name="text">
                    <string/>
                   </property>
@@ -448,7 +448,7 @@
                  </widget>
                 </item>
                 <item row="9" column="1">
-                 <widget class="QCheckBox" name="attr_auth_checkBox">
+                 <widget class="QCheckBox" name="attr__auth__checkBox">
                   <property name="text">
                    <string/>
                   </property>
@@ -462,7 +462,7 @@
                  </widget>
                 </item>
                 <item row="10" column="1">
-                 <widget class="QCheckBox" name="attr_regexp_match_checkBox">
+                 <widget class="QCheckBox" name="attr__regexp_match__checkBox">
                   <property name="text">
                    <string/>
                   </property>
@@ -498,8 +498,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>142</width>
-                 <height>138</height>
+                 <width>368</width>
+                 <height>399</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_3">

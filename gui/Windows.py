@@ -104,8 +104,8 @@ class MainWindow(QMainWindow):
         self.ui.attr_lost_send_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
         self.ui.attr__response__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-        self.ui.attr_lost_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
-        self.ui.attr_timeout_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__lost__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
+        self.ui.attr__timeout__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
 
         self.ui.attr_milliseconds_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
         self.ui.attr_variable_spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
@@ -134,15 +134,31 @@ class MainWindow(QMainWindow):
         self.ui.attr__condexec_inverse__checkBox.stateChanged.connect(
             lambda x: self.slotHandleLineEditsEdit(self.ui.attr__condexec_inverse__checkBox, x))
 
-
-        self.ui.attr__request__comboBox.currentTextChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__request__comboBox, x))
-
-        self.ui.attr__optional__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__optional__checkBox, x))
-
+        # 2 section: Specific attrs for recv command
         self.ui.attr__response__spinBox.valueChanged.connect(
             lambda x: self.slotHandleLineEditsEdit(self.ui.attr__response__spinBox, x))
+        self.ui.attr__request__comboBox.currentTextChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__request__comboBox, x))
+        self.ui.attr__lost__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__lost__spinBox, x))
+        self.ui.attr__timeout__spinBox.valueChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__timeout__spinBox, x))
+        self.ui.attr__ontimeout__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__ontimeout__LineEdit))
+        self.ui.attr__response_txn__LineEdit.editingFinished.connect(
+            lambda: self.slotHandleLineEditsEdit(self.ui.attr__response_txn__LineEdit))
+        self.ui.attr__optional__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__optional__checkBox, x))
+        self.ui.attr__ignoresdp__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__ignoresdp__checkBox, x))
+        self.ui.attr__rrs__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__rrs__checkBox, x))
+        self.ui.attr__auth__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__auth__checkBox, x))
+        self.ui.attr__regexp_match__checkBox.stateChanged.connect(
+            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__regexp_match__checkBox, x))
+
+
 
         self.ui.texte__content.textChanged.connect(
             lambda: self.slotHandleLineEditsEdit(self.ui.texte__content))

@@ -29,17 +29,17 @@ class UIModelController:
             ui.attr__request__comboBox.setCurrentText(command.request)
 
             ui.attr__response__spinBox.setValue(command.response)
-            ui.attr_lost_spinBox.setValue(command.lost)
-            ui.attr_timeout_spinBox.setValue(command.timeout)
+            ui.attr__lost__spinBox.setValue(command.lost)
+            ui.attr__timeout__spinBox.setValue(command.timeout)
 
-            ui.attr_ontimeout_LineEdit.setText(command.ontimeout)
-            ui.attr_response_txn_LineEdit.setText(command.response_txn)
+            ui.attr__ontimeout__LineEdit.setText(command.ontimeout)
+            ui.attr__response_txn__LineEdit.setText(command.response_txn)
 
             ui.attr__optional__checkBox.setChecked(command.optional)
-            ui.attr_ignoresdp_checkBox.setChecked(command.ignoresdp)
-            ui.attr_rrs_checkBox.setChecked(command.rrs)
-            ui.attr_auth_checkBox.setChecked(command.auth)
-            ui.attr_regexp_match_checkBox.setChecked(command.regexp_match)
+            ui.attr__ignoresdp__checkBox.setChecked(command.ignoresdp)
+            ui.attr__rrs__checkBox.setChecked(command.rrs)
+            ui.attr__auth__checkBox.setChecked(command.auth)
+            ui.attr__regexp_match__checkBox.setChecked(command.regexp_match)
 
             ui.stackedw_content.setCurrentIndex(SippDrawConf.STACK_CONTENT_PAGE)
             ui.texte__content.setText(command.content)
