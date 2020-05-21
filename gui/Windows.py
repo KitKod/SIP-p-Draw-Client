@@ -1,7 +1,7 @@
-from PySide2.QtCore import Slot
+from PySide2.QtCore import Slot, Qt
 from PySide2.QtGui import QColor
 from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpinBox, QCheckBox,\
-    QComboBox, QTextEdit, QDoubleSpinBox
+    QComboBox, QTextEdit, QDoubleSpinBox, QMenu
 
 from SippDrawConf import SippDrawConf
 from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
@@ -89,7 +89,10 @@ class MainWindow(QMainWindow):
         header.setSectionResizeMode(SippDrawConf.RECV_CMD_COLUMN, QHeaderView.Stretch)
         header.setSectionResizeMode(SippDrawConf.ACTION_CMD_COLUMN, QHeaderView.Stretch)
         header.setSectionResizeMode(SippDrawConf.SEND_CMD_COLUMN, QHeaderView.Stretch)
+
         self.ui.table_constructor.cellClicked.connect(self.slotBlockWasClicked)
+        self.ui.table_constructor.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.ui.table_constructor.customContextMenuRequested.connect(self.slotContextMenuRequested)
 
     def __initToolBox(self):
         self.ui.toolBox.setCurrentIndex(SippDrawConf.TOOLBOX_COMM_ATTR_PAGE)
@@ -233,3 +236,15 @@ class MainWindow(QMainWindow):
         print("slotBlockWasClicked(): Row %d and Column %d was clicked" % (row, column))
         block = self.ui.table_constructor.currentItem()
         self.uimodel_controller.displayCommandDataInAttrPages(block.command)
+
+    @Slot()
+    def slotContextMenuRequested(self, position):
+        def deleteSelectedRows():
+            selected_rows = [item.row() for item in self.ui.table_constructor.selectedItems()]
+            for row in selected_rows:
+                self.ui.table_constructor.removeRow(row)
+
+        menu = QMenu()
+        menu.addAction("Delete", deleteSelectedRows)
+        menu.addSeparator()
+        menu.exec_(self.ui.table_constructor.mapToGlobal(position))
