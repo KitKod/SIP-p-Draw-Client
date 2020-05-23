@@ -1,3 +1,6 @@
+import xml.etree.ElementTree as ET
+
+
 class BaseCommand:
     """This class is base for all SIPp commands.
 
@@ -28,6 +31,12 @@ class BaseCommand:
     #: str?: contains data that located in command.
     content = ''
 
+    def convertToXmlView(self):
+        pass
+
+    def convertFromXmlView(self):
+        pass
+
 
 class SendCommand(BaseCommand):
     #: int:
@@ -38,6 +47,25 @@ class SendCommand(BaseCommand):
     start_txn = ''
     #: str?:
     ack_txn = ''
+
+    def convertToXmlView(self):
+        # b = ET.SubElement(a, 'b')
+        # tree = ET.ElementTree(a)
+        # tree.write("filename.xml")
+        element = ET.Element('send')
+        if self.retrans >= 0:
+            element.set('retrans', str(self.retrans))
+        if self.lost_send >= 0:
+            element.set('lost', str(self.lost_send))
+        if self.start_txn:
+            element.set('start_txn', self.start_txn)
+        if self.ack_txn:
+            element.set('ack_txn', self.ack_txn)
+        if self.content:
+            element.text = self.content
+        ET.dump(element)
+
+        return element
 
 
 class RecvCommand(BaseCommand):

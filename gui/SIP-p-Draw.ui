@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>388</width>
-         <height>419</height>
+         <height>397</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -62,7 +62,7 @@
              <x>0</x>
              <y>0</y>
              <width>368</width>
-             <height>399</height>
+             <height>377</height>
             </rect>
            </property>
            <layout class="QFormLayout" name="formLayout_5">
@@ -200,7 +200,7 @@
          <x>0</x>
          <y>0</y>
          <width>388</width>
-         <height>419</height>
+         <height>397</height>
         </rect>
        </property>
        <attribute name="label">
@@ -237,7 +237,7 @@
                  <x>0</x>
                  <y>0</y>
                  <width>368</width>
-                 <height>399</height>
+                 <height>377</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_2">
@@ -498,8 +498,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>399</height>
+                 <width>142</width>
+                 <height>138</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_3">
@@ -587,8 +587,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>399</height>
+                 <width>223</width>
+                 <height>130</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_4">
@@ -731,8 +731,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>399</height>
+                 <width>299</width>
+                 <height>35</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_8">
@@ -762,7 +762,7 @@
          <x>0</x>
          <y>0</y>
          <width>388</width>
-         <height>419</height>
+         <height>397</height>
         </rect>
        </property>
        <attribute name="label">
@@ -893,18 +893,23 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionnew"/>
-    <addaction name="actionExport"/>
+    <addaction name="action_import"/>
+    <addaction name="action_export"/>
    </widget>
    <widget class="QMenu" name="menuRun">
     <property name="title">
-     <string>Run</string>
+     <string>Test</string>
     </property>
+    <addaction name="action_run"/>
    </widget>
    <addaction name="menufile"/>
    <addaction name="menuRun"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
@@ -915,15 +920,36 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_import"/>
+   <addaction name="action_export"/>
+   <addaction name="separator"/>
+   <addaction name="action_run"/>
   </widget>
-  <action name="actionnew">
+  <action name="action_import">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resources/import.png</normaloff>../resources/import.png</iconset>
+   </property>
    <property name="text">
     <string>Import</string>
    </property>
   </action>
-  <action name="actionExport">
+  <action name="action_export">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resources/export.png</normaloff>../resources/export.png</iconset>
+   </property>
    <property name="text">
     <string>Export</string>
+   </property>
+  </action>
+  <action name="action_run">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resources/run.png</normaloff>../resources/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run</string>
    </property>
   </action>
  </widget>

@@ -1,7 +1,8 @@
-from PySide2.QtCore import Slot, Qt
-from PySide2.QtGui import QColor
+import os
+from PySide2.QtCore import Slot, Qt, QSize
+from PySide2.QtGui import QColor, QIcon
 from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpinBox, QCheckBox,\
-    QComboBox, QTextEdit, QDoubleSpinBox, QMenu
+    QComboBox, QTextEdit, QDoubleSpinBox, QMenu, QFileDialog
 
 from SippDrawConf import SippDrawConf
 from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
@@ -9,6 +10,7 @@ from gui.ui_mainwindow import Ui_MainWindow
 from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand, NopCommand
 from models.TableBlock import TableBlock
 from Control import UIModelController
+from FileProcessor import XmlExporter
 
 
 class AddBlockDialog(QDialog):
@@ -98,7 +100,20 @@ class MainWindow(QMainWindow):
         self.ui.toolBox.setCurrentIndex(SippDrawConf.TOOLBOX_COMM_ATTR_PAGE)
 
     def __initButtons(self):
+        action_run_icon = QIcon()
+        action_import_icon = QIcon()
+        action_export_icon = QIcon()
+
+        action_run_icon.addFile(u"resources/run.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_import_icon.addFile(u"resources/import.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_export_icon.addFile(u"resources/export.png", QSize(), QIcon.Normal, QIcon.Off)
+
+        self.ui.action_run.setIcon(action_run_icon)
+        self.ui.action_import.setIcon(action_import_icon)
+        self.ui.action_export.setIcon(action_export_icon)
+
         self.ui.pushButton_add_block_to_table.clicked.connect(self.slotAddBlockToTable)
+        self.ui.action_export.triggered.connect(self.slotActionExportClicked)
 
     def __initInputWidgets(self):
         self.ui.attr__rtd__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
@@ -248,3 +263,25 @@ class MainWindow(QMainWindow):
         menu.addAction("Delete", deleteSelectedRows)
         menu.addSeparator()
         menu.exec_(self.ui.table_constructor.mapToGlobal(position))
+
+    @Slot()
+    def slotActionExportClicked(self, checked):
+        table = self.ui.table_constructor
+        fname = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))
+
+        row_count = table.rowCount()
+        commands_position_roadmap = []
+        for row in range(row_count):
+            for column in range(SippDrawConf.COUNT_OF_COLUMN):
+                block = table.item(row, column)
+                if block is not None:
+                    commands_position_roadmap.append(block.command)
+        print(commands_position_roadmap)
+
+        exporter = XmlExporter(commands_position_roadmap)
+        exporter.loadToFile(fname[0])
+
+        # print('kamak click ', fname)
+        # with open(fname[0], 'w') as f:
+        #     f.write('Test file {}')
+
