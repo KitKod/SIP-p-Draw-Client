@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -207,7 +207,7 @@
          <x>0</x>
          <y>0</y>
          <width>388</width>
-         <height>397</height>
+         <height>413</height>
         </rect>
        </property>
        <attribute name="label">
@@ -217,7 +217,7 @@
         <item row="0" column="0">
          <widget class="QStackedWidget" name="stackedw_spec_attrs">
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page_stackw_recv_cmd">
            <layout class="QGridLayout" name="gridLayout_4">
@@ -506,7 +506,7 @@
                  <x>0</x>
                  <y>0</y>
                  <width>368</width>
-                 <height>377</height>
+                 <height>393</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_3">
@@ -594,8 +594,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>223</width>
-                 <height>130</height>
+                 <width>368</width>
+                 <height>393</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_4">
@@ -769,7 +769,7 @@
          <x>0</x>
          <y>0</y>
          <width>388</width>
-         <height>397</height>
+         <height>413</height>
         </rect>
        </property>
        <attribute name="label">
@@ -868,7 +868,7 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="action_import"/>
+    <addaction name="action_open"/>
     <addaction name="action_export"/>
    </widget>
    <widget class="QMenu" name="menuRun">
@@ -895,18 +895,21 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="action_import"/>
+   <addaction name="action_open"/>
    <addaction name="action_export"/>
    <addaction name="separator"/>
    <addaction name="action_run"/>
   </widget>
-  <action name="action_import">
+  <action name="action_open">
    <property name="icon">
     <iconset>
      <normaloff>../resources/import.png</normaloff>../resources/import.png</iconset>
    </property>
    <property name="text">
-    <string>Import</string>
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open scenarion</string>
    </property>
   </action>
   <action name="action_export">

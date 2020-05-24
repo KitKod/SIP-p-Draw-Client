@@ -101,19 +101,20 @@ class MainWindow(QMainWindow):
 
     def __initButtons(self):
         action_run_icon = QIcon()
-        action_import_icon = QIcon()
+        action_open_icon = QIcon()
         action_export_icon = QIcon()
 
         action_run_icon.addFile(u"resources/run.png", QSize(), QIcon.Normal, QIcon.Off)
-        action_import_icon.addFile(u"resources/import.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_open_icon.addFile(u"resources/import.png", QSize(), QIcon.Normal, QIcon.Off)
         action_export_icon.addFile(u"resources/export.png", QSize(), QIcon.Normal, QIcon.Off)
 
         self.ui.action_run.setIcon(action_run_icon)
-        self.ui.action_import.setIcon(action_import_icon)
+        self.ui.action_open.setIcon(action_open_icon)
         self.ui.action_export.setIcon(action_export_icon)
 
         self.ui.pushButton_add_block_to_table.clicked.connect(self.slotAddBlockToTable)
         self.ui.action_export.triggered.connect(self.slotActionExportClicked)
+        self.ui.action_open.triggered.connect(self.slotActionOpenClicked)
 
     def __initInputWidgets(self):
         self.ui.attr__rtd__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)
@@ -268,9 +269,7 @@ class MainWindow(QMainWindow):
     @Slot()
     def slotActionExportClicked(self, _checked):
         table = self.ui.table_constructor
-        # fname = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))
-        fname = QFileDialog.getSaveFileName(self, '')
-
+        fname = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))
         row_count = table.rowCount()
         commands_position_roadmap = []
         for row in range(row_count):
@@ -282,3 +281,13 @@ class MainWindow(QMainWindow):
 
         exporter = XmlExporter(commands_position_roadmap)
         exporter.loadToFile(fname[0])
+
+    @Slot()
+    def slotActionOpenClicked(self, _checked):
+        fname = QFileDialog.getOpenFileName(self, '', os.getenv('HOME'), "XML files (*.xml)")
+        if fname:
+            model = self.ui.table_constructor.model()
+            model.removeRows(0, model.rowCount())
+        exporter = XmlExporter()
+        exporter.loadFromFile(fname[0])
+

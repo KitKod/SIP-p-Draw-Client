@@ -31,6 +31,20 @@ class BaseCommand:
     #: str?: contains data that located in command.
     content = ''
 
+    def __init__(self, xml_elem = None):
+        if xml_elem is not None:
+            attrs_to_update = {}
+            for k, v in xml_elem.attrib.items():
+                try:
+                    attrs_to_update[k] = int(v)
+                except ValueError:
+                    try:
+                        attrs_to_update[k] = float(v)
+                    except ValueError:
+                        attrs_to_update[k] = v
+            self.__dict__.update(attrs_to_update)
+            self.content = xml_elem.text if xml_elem.text is not None else ''
+
     def convertToXmlView(self):
         element = ET.Element('base')
         if self.start_rtd:
