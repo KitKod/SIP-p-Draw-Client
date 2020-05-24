@@ -257,6 +257,7 @@ class MainWindow(QMainWindow):
         def deleteSelectedRows():
             selected_rows = [item.row() for item in self.ui.table_constructor.selectedItems()]
             for row in selected_rows:
+                print(row)
                 self.ui.table_constructor.removeRow(row)
 
         menu = QMenu()
@@ -265,9 +266,10 @@ class MainWindow(QMainWindow):
         menu.exec_(self.ui.table_constructor.mapToGlobal(position))
 
     @Slot()
-    def slotActionExportClicked(self, checked):
+    def slotActionExportClicked(self, _checked):
         table = self.ui.table_constructor
-        fname = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))
+        # fname = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))
+        fname = QFileDialog.getSaveFileName(self, '')
 
         row_count = table.rowCount()
         commands_position_roadmap = []
@@ -280,8 +282,3 @@ class MainWindow(QMainWindow):
 
         exporter = XmlExporter(commands_position_roadmap)
         exporter.loadToFile(fname[0])
-
-        # print('kamak click ', fname)
-        # with open(fname[0], 'w') as f:
-        #     f.write('Test file {}')
-

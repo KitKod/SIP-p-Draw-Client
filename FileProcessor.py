@@ -1,5 +1,4 @@
-import xml.etree.ElementTree as ET
-from xml.dom import minidom
+from lxml import etree as ET
 
 
 class XmlExporter:
@@ -8,20 +7,15 @@ class XmlExporter:
     def __init__(self, commands_roadmap):
         self.commands_roadmap = commands_roadmap
 
-    def __prettify(self, elem):
-        """Return a pretty-printed XML string for the Element.
-        """
-        rough_string = ET.tostring(elem)
-        doc = minidom.parseString(rough_string)
-        dt = minidom.getDOMImplementation('').createDocumentType('scenario', '', 'sipp.dtd')
-        doc.insertBefore(dt, doc.documentElement)
-        return doc.toprettyxml(indent = "  ", encoding = 'ISO-8859-1').decode('utf-8')
-
     def loadToFile(self, path):
+        scenario_name = path.split('/')[-1].split('.')[0]
         root = ET.Element('scenario')
-        root.set('name', 'test1')
+        root.set('name', scenario_name)
         for cmd in self.commands_roadmap:
             root.append(cmd.convertToXmlView())
-        with open(path, 'w') as f:
-            f.write(self.__prettify(root))
-
+        tree = ET.ElementTree(root)
+        tree.write(path,
+                   pretty_print = True,
+                   xml_declaration = True,
+                   encoding = "UTF-8",
+                   doctype = '<!DOCTYPE scenario SYSTEM "sipp.dtd">')

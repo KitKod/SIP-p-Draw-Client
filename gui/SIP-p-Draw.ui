@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_common_attr">
        <property name="enabled">
@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>388</width>
-         <height>397</height>
+         <height>413</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -62,7 +62,7 @@
              <x>0</x>
              <y>0</y>
              <width>368</width>
-             <height>377</height>
+             <height>393</height>
             </rect>
            </property>
            <layout class="QFormLayout" name="formLayout_5">
@@ -104,7 +104,14 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QDoubleSpinBox" name="attr__chance__doubleSpinBox"/>
+             <widget class="QDoubleSpinBox" name="attr__chance__doubleSpinBox">
+              <property name="minimum">
+               <double>-1.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>-1.000000000000000</double>
+              </property>
+             </widget>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="stab1Label_16">
@@ -210,7 +217,7 @@
         <item row="0" column="0">
          <widget class="QStackedWidget" name="stackedw_spec_attrs">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page_stackw_recv_cmd">
            <layout class="QGridLayout" name="gridLayout_4">
@@ -498,8 +505,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>142</width>
-                 <height>138</height>
+                 <width>368</width>
+                 <height>377</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_3">
@@ -845,38 +852,6 @@
     </item>
     <item row="0" column="0">
      <widget class="QTableWidget" name="table_constructor"/>
-    </item>
-    <item row="1" column="1">
-     <widget class="QStackedWidget" name="stackedWidget_2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="page_3">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QPushButton" name="pushButton_change">
-          <property name="text">
-           <string>Change</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_delete">
-          <property name="text">
-           <string>Delete</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="page_4"/>
-     </widget>
     </item>
    </layout>
   </widget>

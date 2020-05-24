@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
         self.page_common_attr = QWidget()
         self.page_common_attr.setObjectName(u"page_common_attr")
         self.page_common_attr.setEnabled(True)
-        self.page_common_attr.setGeometry(QRect(0, 0, 388, 397))
+        self.page_common_attr.setGeometry(QRect(0, 0, 388, 413))
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.scrollArea_5.setWidgetResizable(True)
         self.scrollAreaWidgetContents_5 = QWidget()
         self.scrollAreaWidgetContents_5.setObjectName(u"scrollAreaWidgetContents_5")
-        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 368, 377))
+        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 368, 393))
         self.formLayout_5 = QFormLayout(self.scrollAreaWidgetContents_5)
         self.formLayout_5.setObjectName(u"formLayout_5")
         self.label_18 = QLabel(self.scrollAreaWidgetContents_5)
@@ -93,6 +93,8 @@ class Ui_MainWindow(object):
 
         self.attr__chance__doubleSpinBox = QDoubleSpinBox(self.scrollAreaWidgetContents_5)
         self.attr__chance__doubleSpinBox.setObjectName(u"attr__chance__doubleSpinBox")
+        self.attr__chance__doubleSpinBox.setMinimum(-1.000000000000000)
+        self.attr__chance__doubleSpinBox.setValue(-1.000000000000000)
 
         self.formLayout_5.setWidget(2, QFormLayout.FieldRole, self.attr__chance__doubleSpinBox)
 
@@ -337,7 +339,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 142, 138))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 368, 377))
         self.formLayout_3 = QFormLayout(self.scrollAreaWidgetContents_2)
         self.formLayout_3.setObjectName(u"formLayout_3")
         self.label_retrans = QLabel(self.scrollAreaWidgetContents_2)
@@ -541,34 +543,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.table_constructor, 0, 0, 1, 1)
 
-        self.stackedWidget_2 = QStackedWidget(self.centralwidget)
-        self.stackedWidget_2.setObjectName(u"stackedWidget_2")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.stackedWidget_2.sizePolicy().hasHeightForWidth())
-        self.stackedWidget_2.setSizePolicy(sizePolicy1)
-        self.page_3 = QWidget()
-        self.page_3.setObjectName(u"page_3")
-        self.horizontalLayout_2 = QHBoxLayout(self.page_3)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.pushButton_change = QPushButton(self.page_3)
-        self.pushButton_change.setObjectName(u"pushButton_change")
-
-        self.horizontalLayout_2.addWidget(self.pushButton_change)
-
-        self.pushButton_delete = QPushButton(self.page_3)
-        self.pushButton_delete.setObjectName(u"pushButton_delete")
-
-        self.horizontalLayout_2.addWidget(self.pushButton_delete)
-
-        self.stackedWidget_2.addWidget(self.page_3)
-        self.page_4 = QWidget()
-        self.page_4.setObjectName(u"page_4")
-        self.stackedWidget_2.addWidget(self.page_4)
-
-        self.gridLayout.addWidget(self.stackedWidget_2, 1, 1, 1, 1)
-
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -599,10 +573,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(1)
-        self.stackedw_spec_attrs.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(0)
+        self.stackedw_spec_attrs.setCurrentIndex(1)
         self.stackedw_content.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -689,8 +662,6 @@ class Ui_MainWindow(object):
         self.label_missing_content.setText(QCoreApplication.translate("MainWindow", u"This command has not content.", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_content), QCoreApplication.translate("MainWindow", u"Content", None))
         self.pushButton_add_block_to_table.setText(QCoreApplication.translate("MainWindow", u"+", None))
-        self.pushButton_change.setText(QCoreApplication.translate("MainWindow", u"Change", None))
-        self.pushButton_delete.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
         self.menufile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuRun.setTitle(QCoreApplication.translate("MainWindow", u"Test", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))

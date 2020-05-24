@@ -1,4 +1,4 @@
-import xml.etree.ElementTree as ET
+from lxml import etree as ET
 
 
 class BaseCommand:
@@ -32,7 +32,28 @@ class BaseCommand:
     content = ''
 
     def convertToXmlView(self):
-        pass
+        element = ET.Element('base')
+        if self.start_rtd:
+            element.set('start_rtd', self.start_rtd)
+        if self.rtd >= 0:
+            element.set('rtd', str(self.rtd))
+        if self.repeat_rtd:
+            element.set('repeat_rtd', 'true')
+        if self.crlf:
+            element.set('crlf', 'true')
+        if self.next:
+            element.set('next', self.next)
+        if self.test:
+            element.set('test', self.test)
+        if self.chance >= 0:
+            element.set('chance', str(self.chance))
+        if self.condexec:
+            element.set('condexec', self.condexec)
+        if self.condexec_inverse:
+            element.set('condexec_inverse', 'true')
+        if self.counter:
+            element.set('counter', self.counter)
+        return element
 
     def convertFromXmlView(self):
         pass
@@ -49,10 +70,9 @@ class SendCommand(BaseCommand):
     ack_txn = ''
 
     def convertToXmlView(self):
-        # b = ET.SubElement(a, 'b')
-        # tree = ET.ElementTree(a)
-        # tree.write("filename.xml")
-        element = ET.Element('send')
+        element = super().convertToXmlView()
+        element.tag = 'send'
+
         if self.retrans >= 0:
             element.set('retrans', str(self.retrans))
         if self.lost_send >= 0:
@@ -62,9 +82,7 @@ class SendCommand(BaseCommand):
         if self.ack_txn:
             element.set('ack_txn', self.ack_txn)
         if self.content:
-            element.text = self.content
-        ET.dump(element)
-
+            element.text = ET.CDATA(self.content)
         return element
 
 
@@ -86,6 +104,36 @@ class RecvCommand(BaseCommand):
     #: str?
     response_txn = ''
 
+    def convertToXmlView(self):
+        element = super().convertToXmlView()
+        element.tag = 'recv'
+
+        if self.response >= 0:
+            element.set('response', str(self.response))
+        if self.request != '-':
+            element.set('request', self.request)
+        if self.optional:
+            element.set('optional', 'true')
+        if self.ignoresdp:
+            element.set('ignoresdp', 'true')
+        if self.rrs:
+            element.set('rrs', 'true')
+        if self.auth:
+            element.set('auth', 'true')
+        if self.lost >= 0:
+            element.set('lost', str(self.lost))
+        if self.timeout >= 0:
+            element.set('timeout', str(self.timeout))
+        if self.ontimeout:
+            element.set('ontimeout', self.ontimeout)
+        if self.regexp_match:
+            element.set('regexp_match', 'true')
+        if self.response_txn:
+            element.set('response_txn', self.response_txn)
+        if self.content:
+            element.text = self.content
+        return element
+
 
 class PauseCommand(BaseCommand):
     #: int:
@@ -97,7 +145,28 @@ class PauseCommand(BaseCommand):
     #: bool:
     sanity_check = True
 
+    def convertToXmlView(self):
+        element = super().convertToXmlView()
+        element.tag = 'pause'
+
+        if self.milliseconds >= 0:
+            element.set('milliseconds', str(self.milliseconds))
+        if self.variable >= 0:
+            element.set('variable', str(self.variable))
+        if self.distribution != '-':
+            element.set('distribution', self.distribution)
+        if not self.sanity_check:
+            element.set('sanity_check', 'false')
+        return element
+
 
 class NopCommand(BaseCommand):
-    pass
+
+    def convertToXmlView(self):
+        element = super().convertToXmlView()
+        element.tag = 'nop'
+        if self.content:
+            element.text = self.content
+        return element
+
 
