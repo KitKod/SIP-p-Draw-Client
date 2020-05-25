@@ -102,20 +102,24 @@ class MainWindow(QMainWindow):
 
     def __initButtons(self):
         action_run_icon = QIcon()
+        action_new_scenario_icon = QIcon()
         action_open_icon = QIcon()
-        action_export_icon = QIcon()
+        action_save_icon = QIcon()
 
-        action_run_icon.addFile(u"resources/run.png", QSize(), QIcon.Normal, QIcon.Off)
-        action_open_icon.addFile(u"resources/import.png", QSize(), QIcon.Normal, QIcon.Off)
-        action_export_icon.addFile(u"resources/export.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_run_icon.addFile(u"resources/run_scenario.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_new_scenario_icon.addFile(u"resources/new_file.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_open_icon.addFile(u"resources/open.png", QSize(), QIcon.Normal, QIcon.Off)
+        action_save_icon.addFile(u"resources/save.png", QSize(), QIcon.Normal, QIcon.Off)
 
         self.ui.action_run.setIcon(action_run_icon)
+        self.ui.action_new_scenario.setIcon(action_new_scenario_icon)
         self.ui.action_open.setIcon(action_open_icon)
-        self.ui.action_export.setIcon(action_export_icon)
+        self.ui.action_save.setIcon(action_save_icon)
+
+        self.ui.action_save.triggered.connect(self.slotActionExportClicked)
+        self.ui.action_open.triggered.connect(self.slotActionOpenClicked)
 
         self.ui.pushButton_add_block_to_table.clicked.connect(self.slotAddBlockToTable)
-        self.ui.action_export.triggered.connect(self.slotActionExportClicked)
-        self.ui.action_open.triggered.connect(self.slotActionOpenClicked)
 
     def __initInputWidgets(self):
         self.ui.attr__rtd__spinBox.setSpecialValueText(SippDrawConf.SPECIAL_VALUE_SPINBOX)

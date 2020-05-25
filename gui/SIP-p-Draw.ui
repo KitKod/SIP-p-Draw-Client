@@ -217,7 +217,7 @@
         <item row="0" column="0">
          <widget class="QStackedWidget" name="stackedw_spec_attrs">
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="page_stackw_recv_cmd">
            <layout class="QGridLayout" name="gridLayout_4">
@@ -243,8 +243,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>377</height>
+                 <width>229</width>
+                 <height>316</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_2">
@@ -505,8 +505,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>368</width>
-                 <height>393</height>
+                 <width>142</width>
+                 <height>138</height>
                 </rect>
                </property>
                <layout class="QFormLayout" name="formLayout_3">
@@ -738,8 +738,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>299</width>
-                 <height>35</height>
+                 <width>368</width>
+                 <height>393</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_8">
@@ -868,8 +868,9 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="action_new_scenario"/>
     <addaction name="action_open"/>
-    <addaction name="action_export"/>
+    <addaction name="action_save"/>
    </widget>
    <widget class="QMenu" name="menuRun">
     <property name="title">
@@ -895,15 +896,16 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="action_new_scenario"/>
    <addaction name="action_open"/>
-   <addaction name="action_export"/>
+   <addaction name="action_save"/>
    <addaction name="separator"/>
    <addaction name="action_run"/>
   </widget>
   <action name="action_open">
    <property name="icon">
     <iconset>
-     <normaloff>../resources/import.png</normaloff>../resources/import.png</iconset>
+     <normaloff>../resources/open.png</normaloff>../resources/open.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -912,22 +914,34 @@
     <string>Open scenarion</string>
    </property>
   </action>
-  <action name="action_export">
+  <action name="action_save">
    <property name="icon">
     <iconset>
-     <normaloff>../resources/export.png</normaloff>../resources/export.png</iconset>
+     <normaloff>../resources/save.png</normaloff>../resources/save.png</iconset>
    </property>
    <property name="text">
-    <string>Export</string>
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save scenario to file </string>
    </property>
   </action>
   <action name="action_run">
    <property name="icon">
     <iconset>
-     <normaloff>../resources/run.png</normaloff>../resources/run.png</iconset>
+     <normaloff>../resources/run_scenario.png</normaloff>../resources/run_scenario.png</iconset>
    </property>
    <property name="text">
     <string>Run</string>
+   </property>
+  </action>
+  <action name="action_new_scenario">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resources/new_file.png</normaloff>../resources/new_file.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Scenario</string>
    </property>
   </action>
  </widget>
