@@ -10,7 +10,7 @@ from gui.ui_mainwindow import Ui_MainWindow
 from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand, NopCommand
 from models.TableBlock import TableBlock
 from Control import UIModelController
-from FileProcessor import XmlExporter
+from TestScenario import TestScenario
 
 
 class AddBlockDialog(QDialog):
@@ -73,6 +73,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        self.opened_test_scenario = TestScenario()
         self.uimodel_controller = UIModelController(self.ui)
         self.add_block_dialog = AddBlockDialog()
 
@@ -268,8 +269,10 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def slotActionExportClicked(self, _checked):
+        if self.opened_test_scenario.saved:
+            return
+
         table = self.ui.table_constructor
-        fname = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))
         row_count = table.rowCount()
         commands_position_roadmap = []
         for row in range(row_count):
@@ -279,15 +282,23 @@ class MainWindow(QMainWindow):
                     commands_position_roadmap.append(block.command)
         print(commands_position_roadmap)
 
-        exporter = XmlExporter(commands_position_roadmap)
-        exporter.loadToFile(fname[0])
+        if self.opened_test_scenario.path_to_file is None:
+            save_as = QFileDialog.getSaveFileName(self, '', os.getenv('HOME')) # create new file to save.
+
+        self.opened_test_scenario.saved = True
+        self.opened_test_scenario.loadToFile()
 
     @Slot()
     def slotActionOpenClicked(self, _checked):
-        fname = QFileDialog.getOpenFileName(self, '', os.getenv('HOME'), "XML files (*.xml)")
-        if fname:
-            model = self.ui.table_constructor.model()
-            model.removeRows(0, model.rowCount())
-        exporter = XmlExporter()
-        exporter.loadFromFile(fname[0])
+        if not self.opened_test_scenario.saved:
+            print('Old file not save (has changes)')
+
+        path_to_file = QFileDialog.getOpenFileName(self, '', os.getenv('HOME'), "XML files (*.xml)")[0]
+
+        if not path_to_file:
+            return
+        model = self.ui.table_constructor.model()
+        model.removeRows(0, model.rowCount())
+
+        self.opened_test_scenario = TestScenario(path_to_file)
 

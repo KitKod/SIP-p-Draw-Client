@@ -6,11 +6,21 @@ from models.TableBlock import TableBlock
 from SippDrawConf import getMUI, SippDrawConf
 
 
-class XmlExporter:
+class TestScenario:
     commands_roadmap = None
 
-    def __init__(self, commands_roadmap=None):
-        self.commands_roadmap = commands_roadmap
+    name = None
+    path_to_file = None
+    saved = True
+
+    def __init__(self, from_file = None):
+        if from_file is not None:
+            self.loadFromFile(from_file)
+            self.path_to_file = from_file
+            self.name = from_file.split('/')[-1].split('.')[0]
+        else:
+            self.name = 'new_sip_p_draw.xml'
+        # self.commands_roadmap = commands_roadmap
 
     def loadToFile(self, path):
         scenario_name = path.split('/')[-1].split('.')[0]
@@ -25,8 +35,8 @@ class XmlExporter:
                    encoding = "UTF-8",
                    doctype = '<!DOCTYPE scenario SYSTEM "sipp.dtd">')
 
-    def loadFromFile(self, path):
-        tree = ET.parse(path)
+    def loadFromFile(self):
+        tree = ET.parse(self.path_to_file)
         root = tree.getroot()
         cmds_roadmap = []
 

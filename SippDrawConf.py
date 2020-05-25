@@ -24,6 +24,7 @@ class SippDrawConf:
 
     main_window = None
     ui = None
+    test_scenario = None
 
 
 def getMainWindow():
@@ -37,4 +38,11 @@ def getMUI():
     if SippDrawConf.ui is None:
         SippDrawConf.ui = getMainWindow().ui
     return SippDrawConf.ui
+
+
+def getCurrentTestScenario():
+    if SippDrawConf.test_scenario is None:
+        from TestScenario import TestScenario
+        SippDrawConf.test_scenario = TestScenario()
+    return SippDrawConf.test_scenario
 
