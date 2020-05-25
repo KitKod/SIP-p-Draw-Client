@@ -42,6 +42,10 @@ class BaseCommand:
                         attrs_to_update[k] = float(v)
                     except ValueError:
                         attrs_to_update[k] = v
+                if v == 'true':
+                    attrs_to_update[k] = True
+                elif v == 'false':
+                    attrs_to_update[k] = False
             self.__dict__.update(attrs_to_update)
             self.content = xml_elem.text if xml_elem.text is not None else ''
 

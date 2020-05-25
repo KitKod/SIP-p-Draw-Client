@@ -134,76 +134,76 @@ class MainWindow(QMainWindow):
 
         # 1 section: common attrs
         self.ui.attr__start_rtd__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__start_rtd__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__start_rtd__LineEdit))
         self.ui.attr__rtd__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__rtd__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__rtd__spinBox, x))
         self.ui.attr__chance__doubleSpinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__chance__doubleSpinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__chance__doubleSpinBox, x))
         self.ui.attr__next__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__next__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__next__LineEdit))
         self.ui.attr__test__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__test__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__test__LineEdit))
         self.ui.attr__condexec__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__condexec__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__condexec__LineEdit))
         self.ui.attr__counter__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__counter__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__counter__LineEdit))
         self.ui.attr__repeat_rtd__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__repeat_rtd__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__repeat_rtd__checkBox, x))
         self.ui.attr__crlf__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__crlf__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__crlf__checkBox, x))
         self.ui.attr__condexec_inverse__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__condexec_inverse__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__condexec_inverse__checkBox, x))
 
         # 2 section: Specific attrs for recv command
         self.ui.attr__response__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__response__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__response__spinBox, x))
         self.ui.attr__request__comboBox.currentTextChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__request__comboBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__request__comboBox, x))
         self.ui.attr__lost__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__lost__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__lost__spinBox, x))
         self.ui.attr__timeout__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__timeout__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__timeout__spinBox, x))
         self.ui.attr__ontimeout__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__ontimeout__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__ontimeout__LineEdit))
         self.ui.attr__response_txn__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__response_txn__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__response_txn__LineEdit))
         self.ui.attr__optional__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__optional__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__optional__checkBox, x))
         self.ui.attr__ignoresdp__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__ignoresdp__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__ignoresdp__checkBox, x))
         self.ui.attr__rrs__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__rrs__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__rrs__checkBox, x))
         self.ui.attr__auth__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__auth__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__auth__checkBox, x))
         self.ui.attr__regexp_match__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__regexp_match__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__regexp_match__checkBox, x))
 
         # 2 section: Specific attrs for send command
         self.ui.attr__retrans__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__retrans__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__retrans__spinBox, x))
         self.ui.attr__lost_send__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__lost_send__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__lost_send__spinBox, x))
         self.ui.attr__start_txn__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__start_txn__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__start_txn__LineEdit))
         self.ui.attr__ack_txn__LineEdit.editingFinished.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.attr__ack_txn__LineEdit))
+            lambda: self.slotHandleAttrsEdit(self.ui.attr__ack_txn__LineEdit))
 
         # 2 section: Specific attrs for pause command
         self.ui.attr__milliseconds__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__milliseconds__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__milliseconds__spinBox, x))
         self.ui.attr__variable__spinBox.valueChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__variable__spinBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__variable__spinBox, x))
         self.ui.attr__distribution__comboBox.currentTextChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__distribution__comboBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__distribution__comboBox, x))
         self.ui.attr__sanity_check__checkBox.stateChanged.connect(
-            lambda x: self.slotHandleLineEditsEdit(self.ui.attr__sanity_check__checkBox, x))
+            lambda x: self.slotHandleAttrsEdit(self.ui.attr__sanity_check__checkBox, x))
 
         # 3 section: Specific content for command
         self.ui.texte__content.textChanged.connect(
-            lambda: self.slotHandleLineEditsEdit(self.ui.texte__content))
+            lambda: self.slotHandleAttrsEdit(self.ui.texte__content))
 
     @Slot()
-    def slotHandleLineEditsEdit(self, widget, *args):
+    def slotHandleAttrsEdit(self, widget, *args):
         command = self.ui.table_constructor.currentItem().command
         attr_name = widget.objectName().split('__')[1]
 
@@ -225,6 +225,7 @@ class MainWindow(QMainWindow):
         print('new_value={}; arr_name={}'.format(new_value, attr_name))
 
         setattr(command, attr_name, new_value)
+        self.opened_test_scenario.saved = False
 
     @Slot()
     def slotAddBlockToTable(self):
@@ -247,6 +248,7 @@ class MainWindow(QMainWindow):
                                             self.add_block_dialog.insert_to_column)
         ui.table_constructor.cellClicked.emit(position_new_row,
                                               self.add_block_dialog.insert_to_column)
+        self.opened_test_scenario.saved = False
 
     @Slot()
     def slotBlockWasClicked(self, row, column):
@@ -261,6 +263,7 @@ class MainWindow(QMainWindow):
             for row in selected_rows:
                 print(row)
                 self.ui.table_constructor.removeRow(row)
+            self.opened_test_scenario.saved = False
 
         menu = QMenu()
         menu.addAction("Delete", deleteSelectedRows)
@@ -272,20 +275,13 @@ class MainWindow(QMainWindow):
         if self.opened_test_scenario.saved:
             return
 
-        table = self.ui.table_constructor
-        row_count = table.rowCount()
-        commands_position_roadmap = []
-        for row in range(row_count):
-            for column in range(SippDrawConf.COUNT_OF_COLUMN):
-                block = table.item(row, column)
-                if block is not None:
-                    commands_position_roadmap.append(block.command)
-        print(commands_position_roadmap)
-
         if self.opened_test_scenario.path_to_file is None:
-            save_as = QFileDialog.getSaveFileName(self, '', os.getenv('HOME')) # create new file to save.
+            # create new file to save.
+            save_as = QFileDialog.getSaveFileName(self, '', os.getenv('HOME'))[0]
+            self.opened_test_scenario.path_to_file = save_as
+            self.opened_test_scenario.name = save_as.split('/')[-1]
+            self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
 
-        self.opened_test_scenario.saved = True
         self.opened_test_scenario.loadToFile()
 
     @Slot()
@@ -297,8 +293,10 @@ class MainWindow(QMainWindow):
 
         if not path_to_file:
             return
+
         model = self.ui.table_constructor.model()
         model.removeRows(0, model.rowCount())
 
         self.opened_test_scenario = TestScenario(path_to_file)
+        self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
 
