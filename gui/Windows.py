@@ -84,6 +84,7 @@ class MainWindow(QMainWindow):
         self.__initToolBox()
         self.__initButtons()
         self.__initInputWidgets()
+        self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
 
     def __initConstructorTable(self):
         self.ui.table_constructor.setColumnCount(SippDrawConf.COUNT_OF_COLUMN)
@@ -118,6 +119,7 @@ class MainWindow(QMainWindow):
 
         self.ui.action_save.triggered.connect(self.slotActionExportClicked)
         self.ui.action_open.triggered.connect(self.slotActionOpenClicked)
+        self.ui.action_new_scenario.triggered.connect(self.slotActionNewScenarioClicked)
 
         self.ui.pushButton_add_block_to_table.clicked.connect(self.slotAddBlockToTable)
 
@@ -205,6 +207,11 @@ class MainWindow(QMainWindow):
         # 3 section: Specific content for command
         self.ui.texte__content.textChanged.connect(
             lambda: self.slotHandleAttrsEdit(self.ui.texte__content))
+
+    def __clearTable(self):
+        """Deletes all existing rows from the constructor table."""
+        model = self.ui.table_constructor.model()
+        model.removeRows(0, model.rowCount())
 
     @Slot()
     def slotHandleAttrsEdit(self, widget, *args):
@@ -294,13 +301,21 @@ class MainWindow(QMainWindow):
             print('Old file not save (has changes)')
 
         path_to_file = QFileDialog.getOpenFileName(self, '', os.getenv('HOME'), "XML files (*.xml)")[0]
-
         if not path_to_file:
             return
 
-        model = self.ui.table_constructor.model()
-        model.removeRows(0, model.rowCount())
-
+        self.__clearTable()
         self.opened_test_scenario = TestScenario(path_to_file)
         self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
+
+    @Slot()
+    def slotActionNewScenarioClicked(self, _checked):
+        if not self.opened_test_scenario.saved:
+            print('Old file not save (has changes)')
+
+        self.opened_test_scenario = TestScenario()
+        self.__clearTable()
+        self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
+
+
 
