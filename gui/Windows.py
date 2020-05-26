@@ -70,6 +70,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super(MainWindow, self).__init__()
+        print('NEW WINDOW')
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -294,6 +295,7 @@ class MainWindow(QMainWindow):
             self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
 
         self.opened_test_scenario.loadToFile()
+        self.opened_test_scenario.saved = True
 
     @Slot()
     def slotActionOpenClicked(self, _checked):

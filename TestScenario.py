@@ -55,17 +55,14 @@ class TestScenario:
         for elemn in root:
             print(elemn.tag, ' ', elemn.attrib, ' ', elemn.text)
             command_name = elemn.tag
-            command = None
             if command_name == 'send':
-                command = SendCommand(elemn)
+                cmds_roadmap.append(SendCommand(elemn))
             elif command_name == 'recv':
-                command = RecvCommand(elemn)
+                cmds_roadmap.append(RecvCommand(elemn))
             elif command_name == 'pause':
-                command = PauseCommand(elemn)
+                cmds_roadmap.append(PauseCommand(elemn))
             elif command_name == 'nop':
-                command = NopCommand(elemn)
-
-            cmds_roadmap.append(command)
+                cmds_roadmap.append(NopCommand(elemn))
 
         ui = getMUI()
         for command in cmds_roadmap:
