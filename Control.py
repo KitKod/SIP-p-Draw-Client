@@ -1,5 +1,7 @@
+import time
 import subprocess
-from multiprocessing import Process
+from multiprocessing import Value
+from threading import Thread
 
 from SippDrawConf import SippDrawConf
 from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand
@@ -75,15 +77,22 @@ class UIModelController:
             ui.texte__content.setText(command.content)
 
 
-def foo(cmd):
-    print('subprocess start...')
-    result = subprocess.run(cmd)
-    print(result)
+class MyProcess(Thread):
+    def __init__(self, dialog, shared_pid, cmd):
+        Thread.__init__(self)
+        self.dialog = dialog
+        self.shared_pid = shared_pid
+        self.cmd = cmd
 
+    def run(self):
+        process = subprocess.Popen(self.cmd, stdout = subprocess.PIPE, encoding = 'utf8')
+        self.shared_pid.value = process.pid
+        process.wait()
+        self.dialog.testScenarioCompleted()
 
 
 class TestScenarioExecutionController:
-    ui = None
+    dialog = None
     path = None
     tests_count = 1
     duration = None
@@ -91,9 +100,9 @@ class TestScenarioExecutionController:
     remote_ip = None
     trace_stat = False
 
-    def __init__(self, ui, path, tests_count = 1, duration = None, service = None, remote_ip = None,
+    def __init__(self, dialog, path, tests_count = 1, duration = None, service = None, remote_ip = None,
                  trace_stat = False):
-        self.ui = ui
+        self.dialog = dialog
         self.path = path
         self.tests_count = tests_count
         self.duration = duration
@@ -102,7 +111,6 @@ class TestScenarioExecutionController:
         self.trace_stat = trace_stat
 
     def run(self):
-        print('In run')
         cmd_args = []
         if self.remote_ip is not None:
             cmd_args.append(self.remote_ip)
@@ -123,16 +131,14 @@ class TestScenarioExecutionController:
 
         print('PATH={}'.format(cmd))
 
-        p = Process(target = foo, args=(cmd,))
+        shared_pid = Value('i', -10)
+        p = MyProcess(self.dialog, shared_pid, cmd)
         p.start()
-        print('after start process')
+        pid = shared_pid.value
+        while pid == -10:
+            time.sleep(0.3)
+            pid = shared_pid.value
+        print('return final pid={}'.format(pid))
 
-        # result = subprocess.run(cmd)
-
-        # process = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr = subprocess.STDOUT,
-        #                            encoding = 'utf8')
-        # # out, err = process.communicate()
-        # process.wait()
-        # print(out)
-        # print(err)
+        return pid
 

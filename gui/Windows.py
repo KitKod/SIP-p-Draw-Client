@@ -1,7 +1,7 @@
 import os
 from PySide2.QtCore import Slot, Qt, QSize
 
-from PySide2.QtGui import QColor, QIcon
+from PySide2.QtGui import QColor, QIcon, QMovie, QPixmap
 from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpinBox, QCheckBox,\
     QComboBox, QTextEdit, QDoubleSpinBox, QMenu, QFileDialog
 
@@ -22,6 +22,7 @@ class RunScenarioDialog(QDialog):
         self.ui = Ui_Run_Scenario()
         self.main_ui = main_ui
         self.test_scenario = test_scenario
+        self.running_process = None
         self.ui.setupUi(self)
 
         self.ui.run_button.clicked.connect(self.runButtonClicked)
@@ -29,6 +30,9 @@ class RunScenarioDialog(QDialog):
         self.ui.cancel_Button.clicked.connect(self.cancelButtonClicked)
 
         self.ui.buttons_stackedWidget.setCurrentIndex(0)
+
+        self.load_movie = QMovie('resources/load.gif')
+        self.ui.load_label.setMovie(self.load_movie)
 
         for cl in range(SippDrawConf.COUNT_OF_COLUMN):
             block = self.main_ui.table_constructor.item(0, cl)
@@ -43,20 +47,30 @@ class RunScenarioDialog(QDialog):
         # this data was got from UI to UAC scenario
         remote_ip_stab = '192.168.243.148'
         remote_service_stab = '123004'
-
-        executor = TestScenarioExecutionController(self.ui,
+        executor = TestScenarioExecutionController(self,
                                                    self.test_scenario.path_to_file,
                                                    remote_ip = remote_ip_stab,
                                                    service = remote_service_stab)
-        executor.run()
+        self.running_process = executor.run()
+        self.load_movie.start()
+        self.ui.load_label.show()
+        self.ui.buttons_stackedWidget.setCurrentIndex(1)
 
     @Slot()
     def stopButtonClicked(self):
-        pass
+        print(self.running_process, ' is stop')
+        os.kill(self.running_process, 9)
+        self.load_movie.stop()
+        self.reject()
 
     @Slot()
     def cancelButtonClicked(self):
         self.reject()
+
+    def testScenarioCompleted(self):
+        self.load_movie.stop()
+        icon = QPixmap('resources/completed.png')
+        self.ui.load_label.setPixmap(icon)
 
 
 class AddBlockDialog(QDialog):

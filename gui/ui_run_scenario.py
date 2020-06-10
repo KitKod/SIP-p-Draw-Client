@@ -21,8 +21,10 @@ class Ui_Run_Scenario(object):
         if Run_Scenario.objectName():
             Run_Scenario.setObjectName(u"Run_Scenario")
         Run_Scenario.resize(404, 300)
+        Run_Scenario.setModal(True)
         self.verticalLayout = QVBoxLayout(Run_Scenario)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -128,17 +130,42 @@ class Ui_Run_Scenario(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.load_label = QLabel(Run_Scenario)
+        self.status_stackedWidget = QStackedWidget(Run_Scenario)
+        self.status_stackedWidget.setObjectName(u"status_stackedWidget")
+        self.page_5 = QWidget()
+        self.page_5.setObjectName(u"page_5")
+        self.gridLayout = QGridLayout(self.page_5)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.load_label = QLabel(self.page_5)
         self.load_label.setObjectName(u"load_label")
+        sizePolicy.setHeightForWidth(self.load_label.sizePolicy().hasHeightForWidth())
+        self.load_label.setSizePolicy(sizePolicy)
+        self.load_label.setLineWidth(1)
+        self.load_label.setMidLineWidth(0)
         self.load_label.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout.addWidget(self.load_label)
+        self.gridLayout.addWidget(self.load_label, 0, 0, 1, 1)
+
+        self.status_stackedWidget.addWidget(self.page_5)
+        self.page_6 = QWidget()
+        self.page_6.setObjectName(u"page_6")
+        self.pushButton = QPushButton(self.page_6)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(150, 10, 89, 25))
+        self.status_stackedWidget.addWidget(self.page_6)
+
+        self.verticalLayout.addWidget(self.status_stackedWidget)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout.addItem(self.verticalSpacer_5)
 
 
         self.retranslateUi(Run_Scenario)
 
         self.input_stackedWidget.setCurrentIndex(0)
         self.buttons_stackedWidget.setCurrentIndex(0)
+        self.status_stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Run_Scenario)
@@ -151,5 +178,6 @@ class Ui_Run_Scenario(object):
         self.cancel_Button.setText(QCoreApplication.translate("Run_Scenario", u"Cancel", None))
         self.stop_button.setText(QCoreApplication.translate("Run_Scenario", u"Stop", None))
         self.load_label.setText(QCoreApplication.translate("Run_Scenario", u"TextLabel", None))
+        self.pushButton.setText(QCoreApplication.translate("Run_Scenario", u"PushButton", None))
     # retranslateUi
 
