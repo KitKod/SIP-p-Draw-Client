@@ -1,3 +1,6 @@
+import subprocess
+from multiprocessing import Process
+
 from SippDrawConf import SippDrawConf
 from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand
 
@@ -70,3 +73,66 @@ class UIModelController:
             ui.stackedw_spec_attrs.setCurrentIndex(SippDrawConf.STACK_SPEC_ATTR_NOP_PAGE)
             ui.stackedw_content.setCurrentIndex(SippDrawConf.STACK_CONTENT_PAGE)
             ui.texte__content.setText(command.content)
+
+
+def foo(cmd):
+    print('subprocess start...')
+    result = subprocess.run(cmd)
+    print(result)
+
+
+
+class TestScenarioExecutionController:
+    ui = None
+    path = None
+    tests_count = 1
+    duration = None
+    service = None
+    remote_ip = None
+    trace_stat = False
+
+    def __init__(self, ui, path, tests_count = 1, duration = None, service = None, remote_ip = None,
+                 trace_stat = False):
+        self.ui = ui
+        self.path = path
+        self.tests_count = tests_count
+        self.duration = duration
+        self.service = service
+        self.remote_ip = remote_ip
+        self.trace_stat = trace_stat
+
+    def run(self):
+        print('In run')
+        cmd_args = []
+        if self.remote_ip is not None:
+            cmd_args.append(self.remote_ip)
+        if self.service is not None:
+            cmd_args.append('-s')
+            cmd_args.append(str(self.service))
+        if self.duration is not None:
+            cmd_args.append('-d')
+            cmd_args.append(str(self.duration))
+        if self.tests_count:
+            cmd_args.append('-m')
+            cmd_args.append(str(self.tests_count))
+        if self.trace_stat:
+            cmd_args.append('-trace_stat')
+        cmd_args.append('-sf')
+        cmd_args.append(self.path)
+        cmd = ["sipp"] + cmd_args
+
+        print('PATH={}'.format(cmd))
+
+        p = Process(target = foo, args=(cmd,))
+        p.start()
+        print('after start process')
+
+        # result = subprocess.run(cmd)
+
+        # process = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr = subprocess.STDOUT,
+        #                            encoding = 'utf8')
+        # # out, err = process.communicate()
+        # process.wait()
+        # print(out)
+        # print(err)
+

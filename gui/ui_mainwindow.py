@@ -3,22 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'SIP-p-Draw.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.14.2
+## Created by: Qt User Interface Compiler version 5.14.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (QCoreApplication, QDate, QDateTime, QMetaObject,
-    QObject, QPoint, QRect, QSize, QTime, QUrl, Qt)
+from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
+    QRect, QSize, QUrl, Qt)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter,
-    QPixmap, QRadialGradient)
+    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+    QRadialGradient)
 from PySide2.QtWidgets import *
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
+        if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(800, 640)
         self.action_open = QAction(MainWindow)
@@ -50,7 +50,7 @@ class Ui_MainWindow(object):
         self.page_common_attr = QWidget()
         self.page_common_attr.setObjectName(u"page_common_attr")
         self.page_common_attr.setEnabled(True)
-        self.page_common_attr.setGeometry(QRect(0, 0, 388, 413))
+        self.page_common_attr.setGeometry(QRect(0, 0, 98, 88))
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         self.scrollArea_5.setWidgetResizable(True)
         self.scrollAreaWidgetContents_5 = QWidget()
         self.scrollAreaWidgetContents_5.setObjectName(u"scrollAreaWidgetContents_5")
-        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 368, 393))
+        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 214, 306))
         self.formLayout_5 = QFormLayout(self.scrollAreaWidgetContents_5)
         self.formLayout_5.setObjectName(u"formLayout_5")
         self.label_18 = QLabel(self.scrollAreaWidgetContents_5)
@@ -195,7 +195,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 229, 316))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 368, 393))
         self.formLayout_2 = QFormLayout(self.scrollAreaWidgetContents)
         self.formLayout_2.setObjectName(u"formLayout_2")
         self.label_response = QLabel(self.scrollAreaWidgetContents)
@@ -206,6 +206,7 @@ class Ui_MainWindow(object):
         self.attr__response__spinBox = QSpinBox(self.scrollAreaWidgetContents)
         self.attr__response__spinBox.setObjectName(u"attr__response__spinBox")
         self.attr__response__spinBox.setMinimum(-1)
+        self.attr__response__spinBox.setMaximum(600)
         self.attr__response__spinBox.setValue(-1)
 
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.attr__response__spinBox)
@@ -243,6 +244,7 @@ class Ui_MainWindow(object):
         self.attr__lost__spinBox = QSpinBox(self.scrollAreaWidgetContents)
         self.attr__lost__spinBox.setObjectName(u"attr__lost__spinBox")
         self.attr__lost__spinBox.setMinimum(-1)
+        self.attr__lost__spinBox.setMaximum(5000)
         self.attr__lost__spinBox.setValue(-1)
 
         self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.attr__lost__spinBox)
@@ -255,6 +257,7 @@ class Ui_MainWindow(object):
         self.attr__timeout__spinBox = QSpinBox(self.scrollAreaWidgetContents)
         self.attr__timeout__spinBox.setObjectName(u"attr__timeout__spinBox")
         self.attr__timeout__spinBox.setMinimum(-1)
+        self.attr__timeout__spinBox.setMaximum(5000)
         self.attr__timeout__spinBox.setValue(-1)
 
         self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.attr__timeout__spinBox)
@@ -344,7 +347,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 142, 138))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 368, 393))
         self.formLayout_3 = QFormLayout(self.scrollAreaWidgetContents_2)
         self.formLayout_3.setObjectName(u"formLayout_3")
         self.label_retrans = QLabel(self.scrollAreaWidgetContents_2)
@@ -360,6 +363,7 @@ class Ui_MainWindow(object):
         self.attr__lost_send__spinBox = QSpinBox(self.scrollAreaWidgetContents_2)
         self.attr__lost_send__spinBox.setObjectName(u"attr__lost_send__spinBox")
         self.attr__lost_send__spinBox.setMinimum(-1)
+        self.attr__lost_send__spinBox.setMaximum(5000)
         self.attr__lost_send__spinBox.setValue(-1)
 
         self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.attr__lost_send__spinBox)
@@ -387,6 +391,7 @@ class Ui_MainWindow(object):
         self.attr__retrans__spinBox = QSpinBox(self.scrollAreaWidgetContents_2)
         self.attr__retrans__spinBox.setObjectName(u"attr__retrans__spinBox")
         self.attr__retrans__spinBox.setMinimum(-1)
+        self.attr__retrans__spinBox.setMaximum(5000)
         self.attr__retrans__spinBox.setValue(-1)
 
         self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.attr__retrans__spinBox)
@@ -427,6 +432,7 @@ class Ui_MainWindow(object):
         self.attr__milliseconds__spinBox = QSpinBox(self.scrollAreaWidgetContents_3)
         self.attr__milliseconds__spinBox.setObjectName(u"attr__milliseconds__spinBox")
         self.attr__milliseconds__spinBox.setMinimum(-1)
+        self.attr__milliseconds__spinBox.setMaximum(100000)
         self.attr__milliseconds__spinBox.setValue(-1)
 
         self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.attr__milliseconds__spinBox)
@@ -434,6 +440,7 @@ class Ui_MainWindow(object):
         self.attr__variable__spinBox = QSpinBox(self.scrollAreaWidgetContents_3)
         self.attr__variable__spinBox.setObjectName(u"attr__variable__spinBox")
         self.attr__variable__spinBox.setMinimum(-1)
+        self.attr__variable__spinBox.setMaximum(5000)
         self.attr__variable__spinBox.setValue(-1)
 
         self.formLayout_4.setWidget(1, QFormLayout.FieldRole, self.attr__variable__spinBox)
@@ -498,7 +505,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page_spec_attr, u"Specific attributes")
         self.page_content = QWidget()
         self.page_content.setObjectName(u"page_content")
-        self.page_content.setGeometry(QRect(0, 0, 388, 413))
+        self.page_content.setGeometry(QRect(0, 0, 230, 88))
         self.gridLayout_2 = QGridLayout(self.page_content)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.stackedw_content = QStackedWidget(self.page_content)

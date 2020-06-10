@@ -1,5 +1,6 @@
 import os
 from PySide2.QtCore import Slot, Qt, QSize
+
 from PySide2.QtGui import QColor, QIcon
 from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpinBox, QCheckBox,\
     QComboBox, QTextEdit, QDoubleSpinBox, QMenu, QFileDialog
@@ -7,10 +8,55 @@ from PySide2.QtWidgets import QMainWindow, QHeaderView, QDialog, QLineEdit, QSpi
 from SippDrawConf import SippDrawConf
 from gui.ui_add_block_dialog import Ui_Add_Block_Dialog
 from gui.ui_mainwindow import Ui_MainWindow
+from gui.ui_run_scenario import Ui_Run_Scenario
 from models.SIPpCommands import RecvCommand, SendCommand, PauseCommand, NopCommand
 from models.TableBlock import TableBlock
-from Control import UIModelController
+from Control import UIModelController, TestScenarioExecutionController
 from TestScenario import TestScenario
+
+
+class RunScenarioDialog(QDialog):
+
+    def __init__(self, main_ui, test_scenario):
+        super(RunScenarioDialog, self).__init__()
+        self.ui = Ui_Run_Scenario()
+        self.main_ui = main_ui
+        self.test_scenario = test_scenario
+        self.ui.setupUi(self)
+
+        self.ui.run_button.clicked.connect(self.runButtonClicked)
+        self.ui.stop_button.clicked.connect(self.stopButtonClicked)
+        self.ui.cancel_Button.clicked.connect(self.cancelButtonClicked)
+
+        self.ui.buttons_stackedWidget.setCurrentIndex(0)
+
+        for cl in range(SippDrawConf.COUNT_OF_COLUMN):
+            block = self.main_ui.table_constructor.item(0, cl)
+            if block is not None:
+                if isinstance(block.command, SendCommand):
+                    self.ui.input_stackedWidget.setCurrentIndex(0)
+                else:
+                    self.ui.input_stackedWidget.setCurrentIndex(1)
+
+    @Slot()
+    def runButtonClicked(self):
+        # this data was got from UI to UAC scenario
+        remote_ip_stab = '192.168.243.148'
+        remote_service_stab = '123004'
+
+        executor = TestScenarioExecutionController(self.ui,
+                                                   self.test_scenario.path_to_file,
+                                                   remote_ip = remote_ip_stab,
+                                                   service = remote_service_stab)
+        executor.run()
+
+    @Slot()
+    def stopButtonClicked(self):
+        pass
+
+    @Slot()
+    def cancelButtonClicked(self):
+        self.reject()
 
 
 class AddBlockDialog(QDialog):
@@ -121,6 +167,7 @@ class MainWindow(QMainWindow):
         self.ui.action_save.triggered.connect(self.slotActionExportClicked)
         self.ui.action_open.triggered.connect(self.slotActionOpenClicked)
         self.ui.action_new_scenario.triggered.connect(self.slotActionNewScenarioClicked)
+        self.ui.action_run.triggered.connect(self.slotActionRunScenarioClicked)
 
         self.ui.pushButton_add_block_to_table.clicked.connect(self.slotAddBlockToTable)
 
@@ -319,5 +366,11 @@ class MainWindow(QMainWindow):
         self.__clearTable()
         self.ui.statusbar.showMessage('Scenario: {}'.format(self.opened_test_scenario.name))
 
+    @Slot()
+    def slotActionRunScenarioClicked(self, _checked):
+        if not self.opened_test_scenario.saved:
+            self.ui.action_save.triggered.emit()
 
-
+        dialog_w = RunScenarioDialog(self.ui, self.opened_test_scenario)
+        dialog_w.show()
+        dialog_w.exec_()
