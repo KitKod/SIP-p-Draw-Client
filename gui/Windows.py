@@ -31,7 +31,7 @@ class RunScenarioDialog(QDialog):
 
         self.ui.buttons_stackedWidget.setCurrentIndex(0)
 
-        self.load_movie = QMovie('resources/load.gif')
+        self.load_movie = QMovie('resources/load_100.gif')
         self.ui.load_label.setMovie(self.load_movie)
 
         for cl in range(SippDrawConf.COUNT_OF_COLUMN):
@@ -44,33 +44,42 @@ class RunScenarioDialog(QDialog):
 
     @Slot()
     def runButtonClicked(self):
-        # this data was got from UI to UAC scenario
-        remote_ip_stab = '192.168.243.148'
-        remote_service_stab = '123004'
+        print('run')
+        service = self.ui.service_lineEdit.text()
+        remote_ip = self.ui.remoteip_LineEdit.text()
         executor = TestScenarioExecutionController(self,
                                                    self.test_scenario.path_to_file,
-                                                   remote_ip = remote_ip_stab,
-                                                   service = remote_service_stab)
+                                                   remote_ip = remote_ip,
+                                                   service = service)
         self.running_process = executor.run()
         self.load_movie.start()
-        self.ui.load_label.show()
+        self.ui.load_status_label.setText('Scenario is running...')
         self.ui.buttons_stackedWidget.setCurrentIndex(1)
 
     @Slot()
     def stopButtonClicked(self):
-        print(self.running_process, ' is stop')
         os.kill(self.running_process, 9)
         self.load_movie.stop()
+        self.ui.load_status_label.setText('Scenario was stopped.')
         self.reject()
 
     @Slot()
     def cancelButtonClicked(self):
         self.reject()
 
-    def testScenarioCompleted(self):
+    def testScenarioCompleted(self, completion_code):
         self.load_movie.stop()
-        icon = QPixmap('resources/completed.png')
+        print('code ', completion_code)
+        if completion_code != 0:
+            icon = QPixmap('resources/error.png')
+            status_msg = 'Scenario was completed with an error!'
+            print('error')
+        else:
+            icon = QPixmap('resources/completed.png')
+            status_msg = 'Scenario was completed successfully!'
         self.ui.load_label.setPixmap(icon)
+        self.ui.load_status_label.setText(status_msg)
+        # self.ui.load_status_label.repaint()
 
 
 class AddBlockDialog(QDialog):

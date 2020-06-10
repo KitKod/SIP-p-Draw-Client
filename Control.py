@@ -87,8 +87,8 @@ class MyProcess(Thread):
     def run(self):
         process = subprocess.Popen(self.cmd, stdout = subprocess.PIPE, encoding = 'utf8')
         self.shared_pid.value = process.pid
-        process.wait()
-        self.dialog.testScenarioCompleted()
+        result_code = process.wait()
+        self.dialog.testScenarioCompleted(result_code)
 
 
 class TestScenarioExecutionController:
